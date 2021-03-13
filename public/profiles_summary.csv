@@ -1,0 +1,500 @@
+source,modality,file_path,description
+navigo_pointcalls,pkid,profiles/navigo_pointcalls_pkid.csv,Identifiant du pointcall
+navigo_pointcalls,record_id,profiles/navigo_pointcalls_record_id.csv,record_id of the line extracted from navigocorpus
+navigo_pointcalls,pointcall,profiles/navigo_pointcalls_pointcall.csv,Toponyme du port de départ
+navigo_pointcalls,pointcall_uhgs_id,profiles/navigo_pointcalls_pointcall_uhgs_id.csv,Identifiant géogénéral du port de départ
+navigo_pointcalls,toponyme_fr,profiles/navigo_pointcalls_toponyme_fr.csv,"Standardised name of the port, in French"
+navigo_pointcalls,toponyme_en,profiles/navigo_pointcalls_toponyme_en.csv,"Standardised name of the port, in English"
+navigo_pointcalls,latitude,profiles/navigo_pointcalls_latitude.csv,latitude
+navigo_pointcalls,longitude,profiles/navigo_pointcalls_longitude.csv,longitude
+navigo_pointcalls,pointcall_admiralty,profiles/navigo_pointcalls_pointcall_admiralty.csv,amirauté d'appartenance du port
+navigo_pointcalls,pointcall_province,profiles/navigo_pointcalls_pointcall_province.csv,province d'appartenance du port
+navigo_pointcalls,pointcall_states,profiles/navigo_pointcalls_pointcall_states.csv,"états d'appartenance structurés ainsi : un dictionnaire de couple de dates, état d'appartenance. Les 2 dates les plus extrêmes sont 1749 et 1815. 
+Exemple : [{1749-1768 : République de Gênes}, {1768-1814 : France}]"
+navigo_pointcalls,pointcall_substates,profiles/navigo_pointcalls_pointcall_substates.csv,"sous-états d'appartenance structurés ainsi : un dictionnaire de couple de dates, sous-état d'appartenance. Les 2 dates les plus extrêmes sont 1749 et 1815. Exemple :[{""1749-1794"" : ""colonies françaises d'Amérique""},{""1794-1802"" : ""colonies britanniques d'Amérique""},{""1802-1810"" : ""colonies françaises d'Amérique""},{""1810-1815"" : ""colonies britanniques d'Amérique. Ce sont des regroupements non officiels utiles à l'analyse permettant de distinguer les colonies par exemple ou les territoires annexés à des empires qui seront plus tard indépendants. "
+navigo_pointcalls,pointcall_states_en,profiles/navigo_pointcalls_pointcall_states_en.csv,
+navigo_pointcalls,pointcall_substates_en,profiles/navigo_pointcalls_pointcall_substates_en.csv,
+navigo_pointcalls,state_1789_fr,profiles/navigo_pointcalls_state_1789_fr.csv,Etat d'appartenance en 1789 et en 1787 (aucun changement entre ces 2 dates)
+navigo_pointcalls,state_1789_en,profiles/navigo_pointcalls_state_1789_en.csv,Etat d'appartenance en 1789 et en 1787 (aucun changement entre ces 2 dates) en anglais
+navigo_pointcalls,substate_1789_fr,profiles/navigo_pointcalls_substate_1789_fr.csv,Sous-état (sous division comme une colonie par exemple) d'appartenance en 1789 et en 1787 (aucun changement entre ces 2 dates). Nomenclature utile pour analyser les flux commerciaux.
+navigo_pointcalls,substate_1789_en,profiles/navigo_pointcalls_substate_1789_en.csv,Sous-état (sous division comme une colonie par exemple) d'appartenance en 1789 et en 1787 (aucun changement entre ces 2 dates) en anglais. Nomenclature utile pour analyser les flux commerciaux.
+navigo_pointcalls,source_1787_available,profiles/navigo_pointcalls_source_1787_available.csv,"Vrai si on dispose des registres de ce port en 1787 (qui était oblique), faux sinon (le port est oblique, mais il n'a pas de registre pour 1787)"
+navigo_pointcalls,source_1789_available,profiles/navigo_pointcalls_source_1789_available.csv,"Vrai si on dispose des registres de ce port en 1789 (qui était oblique), faux sinon (le port est oblique, mais il n'a pas de registre pour 1789)"
+navigo_pointcalls,pointcall_status,profiles/navigo_pointcalls_pointcall_status.csv,oblique | siège d'amirauté | rien
+navigo_pointcalls,shiparea,profiles/navigo_pointcalls_shiparea.csv,Shipping area telle que calculée par J-P. Dedieu (mer ou ocean et région côtière du point)
+navigo_pointcalls,pointcall_point,profiles/navigo_pointcalls_pointcall_point.csv,WKT point en EPSG 3857
+navigo_pointcalls,ferme_direction,profiles/navigo_pointcalls_ferme_direction.csv,Direction des Fermes à laquelle le port appartient en 1789
+navigo_pointcalls,ferme_bureau,profiles/navigo_pointcalls_ferme_bureau.csv,Bureau des Fermes auquel le port appartient en 1789
+navigo_pointcalls,ferme_bureau_uncertainty,profiles/navigo_pointcalls_ferme_bureau_uncertainty.csv,"Incertitude concernant le Bureau des Fermes auquel le port appartient en 1789. 0 si certain, -1 sinon. "
+navigo_pointcalls,partner_balance_1789,profiles/navigo_pointcalls_partner_balance_1789.csv,"Désignation du pays étranger auquel se rattache ce port, suivant les sources toflit'18 (Balance du commerce en 1789 SANS ANOM - Archives Nationales d'Outrer-Mer)"
+navigo_pointcalls,partner_balance_supp_1789,profiles/navigo_pointcalls_partner_balance_supp_1789.csv,"Désignation suivant autre nomenclature (Etranger/France-Sénégal-colonies Françaises) de la destination étrangère auquelle se rattache ce port, suivant les sources toflit'18 (Balance du commerce en 1789. Source  ANOM - Archives Nationales d'Outrer-Mer dans Toflit'18. )"
+navigo_pointcalls,partner_balance_1789_uncertainty,profiles/navigo_pointcalls_partner_balance_1789_uncertainty.csv,"Incertitude concernant la désignation du pays étranger auquel se rattache ce port, suivant les sources toflit'18 (Balance du commerce en 1789)"
+navigo_pointcalls,partner_balance_supp_1789_uncertainty,profiles/navigo_pointcalls_partner_balance_supp_1789_uncertainty.csv,"Incertitude concernant la désignation du pays étranger suivant seconde nomenclature (supp) auquel se rattache ce port, suivant les sources toflit'18 (Balance du commerce en 1789)"
+navigo_pointcalls,pointcall_out_date,profiles/navigo_pointcalls_pointcall_out_date.csv,Date de sortie telle que écrite dans la source
+navigo_pointcalls,pointcall_action,profiles/navigo_pointcalls_pointcall_action.csv,In | In-Out | Out | Transit | Loading | Captured | …
+navigo_pointcalls,outdate_fixed,profiles/navigo_pointcalls_outdate_fixed.csv,Date transformée si renseignée de l'observation au départ : yyyy-MM-DD
+navigo_pointcalls,pointcall_in_date,profiles/navigo_pointcalls_pointcall_in_date.csv,Date d'arrivée telle que écrite dans la source
+navigo_pointcalls,indate_fixed,profiles/navigo_pointcalls_indate_fixed.csv,Date transformée si renseignée de l'observation à la destination : yyyy-MM-DD
+navigo_pointcalls,net_route_marker,profiles/navigo_pointcalls_net_route_marker.csv,"A ou Z. Si Z, ne pas garder pour composer la route"
+navigo_pointcalls,pointcall_function,profiles/navigo_pointcalls_pointcall_function.csv,"Anciennement, O = point d’observation, T = Terminus (dernier point mentionné dans l’itinéraire futur déclaré), A  = premier point mentionné dans l’itinéraire passé. 
+NB : ce champ n’est plus prévu pour la saisie. Le nouveau champ qui remplace est « data_block_leader_marker » et désormais O devient A ; T reste T.  A devient I ? AUCUN I vu dans la colonne. Que des O ou des A. Pas de T"
+navigo_pointcalls,navigo_status,profiles/navigo_pointcalls_navigo_status.csv,"Passé, ou futur par rapport au point d’observation. Plus intention non realise “J’aurais voulu aller à Malte… mais j’ai été capturé avant »
+P | C -        CO
+F | A -        ML
+   | G -        RF
+   | M -        RC
+   | S -        RS
+   | U -        TT
+Voir http://navigocorpus.org/iDocuments/Documents/Brief%20manual%20of%20use%20for%20Navigocorpus%20database.pdf "
+navigo_pointcalls,ship_name,profiles/navigo_pointcalls_ship_name.csv,Nom du navire tel que lu dans la source
+navigo_pointcalls,ship_id,profiles/navigo_pointcalls_ship_id.csv,Codage pour identifier le navire uniquement à travers plusieurs déclarations dans les sources
+navigo_pointcalls,tonnage,profiles/navigo_pointcalls_tonnage.csv,"Tonnage du navire, noté en réel (virgule pour décimales).  
+ 1 tonneau = 24 quintaux, donc les valeurs de Marseille exprimés généralement en quintaux doivent être converties en tonneaux en divisant par 24
+Mail Silvia du 29 janvier 2020 : Oui mais En faisant attention que l'unité de mesure exprimée soit le quintal car on a également rapporté à Marseille les tonnages en tonneaux de navires identifiés dans d'autres ports."
+navigo_pointcalls,tonnage_unit,profiles/navigo_pointcalls_tonnage_unit.csv,"Unité du tonnage. 46 valeurs différentes.  A harmoniser
+1 tonneau = 24 quintaux, donc les valeurs de Marseille exprimés généralement en quintaux doivent être converties en tonneaux en divisant par 24"
+navigo_pointcalls,flag,profiles/navigo_pointcalls_flag.csv,"Pavillon du navire, tel que lu dans la source --> afficher etat d'appartenance dans la viz (celui du homeport)"
+navigo_pointcalls,class,profiles/navigo_pointcalls_class.csv,Catégorie de navire (telle que lue dans la source) 
+navigo_pointcalls,ship_flag_id,profiles/navigo_pointcalls_ship_flag_id.csv,identifier of the flag
+navigo_pointcalls,in_crew,profiles/navigo_pointcalls_in_crew.csv,Nombre d'équipage embarqué sur un bateau entrant
+navigo_pointcalls,homeport,profiles/navigo_pointcalls_homeport.csv,Port d'attache du navire
+navigo_pointcalls,homeport_uhgs_id,profiles/navigo_pointcalls_homeport_uhgs_id.csv,Identifiant géogénéral du port d'attache
+navigo_pointcalls,homeport_toponyme_fr,profiles/navigo_pointcalls_homeport_toponyme_fr.csv,"Standardised name of the homeport, in French"
+navigo_pointcalls,homeport_toponyme_en,profiles/navigo_pointcalls_homeport_toponyme_en.csv,"Standardised name of the homeport, in English"
+navigo_pointcalls,homeport_latitude,profiles/navigo_pointcalls_homeport_latitude.csv,latitude
+navigo_pointcalls,homeport_longitude,profiles/navigo_pointcalls_homeport_longitude.csv,longitude
+navigo_pointcalls,homeport_admiralty,profiles/navigo_pointcalls_homeport_admiralty.csv,amirauté d'appartenance du port
+navigo_pointcalls,homeport_province,profiles/navigo_pointcalls_homeport_province.csv,province d'appartenance du port
+navigo_pointcalls,homeport_states,profiles/navigo_pointcalls_homeport_states.csv,"états d'appartenance structurés ainsi : un dictionnaire de couple de dates, état d'appartenance. Les 2 dates les plus extrêmes sont 1749 et 1815. 
+Exemple : [{1749-1768 : République de Gênes}, {1768-1814 : France}]"
+navigo_pointcalls,homeport_substates,profiles/navigo_pointcalls_homeport_substates.csv,"sous-états d'appartenance structurés ainsi : un dictionnaire de couple de dates, sous-état d'appartenance. Les 2 dates les plus extrêmes sont 1749 et 1815. Exemple :[{""1749-1794"" : ""colonies françaises d'Amérique""},{""1794-1802"" : ""colonies britanniques d'Amérique""},{""1802-1810"" : ""colonies françaises d'Amérique""},{""1810-1815"" : ""colonies britanniques d'Amérique"
+navigo_pointcalls,homeport_states_en,profiles/navigo_pointcalls_homeport_states_en.csv,"States of belonging for  homeport between 1749 and 1815 in English It is a dictionary, keyed by a couple of date, giving the belonging state. Extrem dates are 1749 and 1815 by default. Example : [{1749-1768 : République de Gênes}, {1768-1814 : France}].
+The substate is not an 'Official' one but rather used to distinguish colonies from metropoles for instance."
+navigo_pointcalls,homeport_substates_en,profiles/navigo_pointcalls_homeport_substates_en.csv,"Substates of belonging  for  homeport between 1749 and 1815  in English It is a dictionary, keyed by a couple of date, giving the belonging state. Extrem dates are 1749 and 1815 by default. Example : [{""1749-1794"" : ""colonies françaises d'Amérique""},{""1794-1802"" : ""colonies britanniques d'Amérique""},{""1802-1810"" : ""colonies françaises d'Amérique""},{""1810-1815"" : ""colonies britanniques d'Amérique""}]
+The substate is not an 'Official' one but rather used to distinguish colonies from metropoles for instance."
+navigo_pointcalls,homeport_state_1789_fr,profiles/navigo_pointcalls_homeport_state_1789_fr.csv,Etat d'appartenance en 1789 et en 1787 (aucun changement entre ces 2 dates)
+navigo_pointcalls,homeport_state_1789_en,profiles/navigo_pointcalls_homeport_state_1789_en.csv,Etat d'appartenance en 1789 et en 1787 (aucun changement entre ces 2 dates) en anglais
+navigo_pointcalls,homeport_substate_1789_fr,profiles/navigo_pointcalls_homeport_substate_1789_fr.csv,Sous-état (sous division comme une colonie par exemple) d'appartenance en 1789 et en 1787 (aucun changement entre ces 2 dates). Nomenclature utile pour analyser les flux commerciaux.
+navigo_pointcalls,homeport_substate_1789_en,profiles/navigo_pointcalls_homeport_substate_1789_en.csv,Sous-état (sous division comme une colonie par exemple) d'appartenance en 1789 et en 1787 (aucun changement entre ces 2 dates) en anglais. Nomenclature utile pour analyser les flux commerciaux.
+navigo_pointcalls,homeport_source_1787_available,profiles/navigo_pointcalls_homeport_source_1787_available.csv,"Vrai si on dispose des registres de ce port en 1787 (qui était oblique), faux sinon (le port est oblique, mais il n'a pas de registre pour 1787)"
+navigo_pointcalls,homeport_source_1789_available,profiles/navigo_pointcalls_homeport_source_1789_available.csv,"Vrai si on dispose des registres de ce port en 1789 (qui était oblique), faux sinon (le port est oblique, mais il n'a pas de registre pour 1789)"
+navigo_pointcalls,homeport_status,profiles/navigo_pointcalls_homeport_status.csv,oblique | siège d'amirauté
+navigo_pointcalls,homeport_shiparea,profiles/navigo_pointcalls_homeport_shiparea.csv,Shipping area telle que calculée par J-P. Dedieu (mer ou ocean et région côtière du point)
+navigo_pointcalls,homeport_point,profiles/navigo_pointcalls_homeport_point.csv,WKT point en EPSG 3857
+navigo_pointcalls,homeport_ferme_direction,profiles/navigo_pointcalls_homeport_ferme_direction.csv,Direction des Fermes à laquelle le port d'attache du navire appartient en 1789
+navigo_pointcalls,homeport_ferme_bureau,profiles/navigo_pointcalls_homeport_ferme_bureau.csv,Bureau des Fermes auquel le port d'attache du navire appartient en 1789
+navigo_pointcalls,homeport_ferme_bureau_uncertainty,profiles/navigo_pointcalls_homeport_ferme_bureau_uncertainty.csv,"Incertitude concernant le Bureau des Fermes auquel le port d'attache du navire appartient en 1789. 0 si certain, -1 sinon. "
+navigo_pointcalls,homeport_partner_balance_1789,profiles/navigo_pointcalls_homeport_partner_balance_1789.csv,"Désignation du pays étranger auquel se rattache ce port d'attache du navire , suivant les sources toflit'18 (Balance du commerce en 1789 SANS ANOM - Archives Nationales d'Outrer-Mer)"
+navigo_pointcalls,homeport_partner_balance_supp_1789,profiles/navigo_pointcalls_homeport_partner_balance_supp_1789.csv,"Désignation suivant autre nomenclature (Etranger/France-Sénégal-colonies Françaises) de la destination étrangère auquelle se rattache ce port d'attache du navire , suivant les sources toflit'18 (Balance du commerce en 1789. Source  ANOM - Archives Nationales d'Outrer-Mer dans Toflit'18. )"
+navigo_pointcalls,homeport_partner_balance_1789_uncertainty,profiles/navigo_pointcalls_homeport_partner_balance_1789_uncertainty.csv,"Incertitude concernant la désignation du pays étranger auquel se rattache ce port d'attache du navire , suivant les sources toflit'18 (Balance du commerce en 1789)"
+navigo_pointcalls,homeport_partner_balance_supp_1789_uncertainty,profiles/navigo_pointcalls_homeport_partner_balance_supp_1789_uncertainty.csv,"Incertitude concernant la désignation du pays étranger suivant seconde nomenclature (supp) auquel se rattache ce port d'attache du navire , suivant les sources toflit'18 (Balance du commerce en 1789)"
+navigo_pointcalls,source_doc_id,profiles/navigo_pointcalls_source_doc_id.csv,Identifiant du document source
+navigo_pointcalls,source_text,profiles/navigo_pointcalls_source_text.csv,Nom complet du document source
+navigo_pointcalls,source_suite,profiles/navigo_pointcalls_source_suite.csv,Marseille | G5
+navigo_pointcalls,source_component,profiles/navigo_pointcalls_source_component.csv,Composante de la source
+navigo_pointcalls,source_number,profiles/navigo_pointcalls_source_number.csv,Numero de page ou d'entrée dans le registre
+navigo_pointcalls,source_other,profiles/navigo_pointcalls_source_other.csv,"Autre information (foliot, ou autre)"
+navigo_pointcalls,source_main_port_uhgs_id,profiles/navigo_pointcalls_source_main_port_uhgs_id.csv,Identifiant du port le plus cité en O de la source
+navigo_pointcalls,source_main_port_toponyme,profiles/navigo_pointcalls_source_main_port_toponyme.csv,Nom du port le plus cité en O de la source
+navigo_pointcalls,source_subset,profiles/navigo_pointcalls_source_subset.csv,"Sous-ensemble de la source fabriqué pour besoin d'analyse : 'Registre du petit cabotage (1786-1787)' à Marseille, Expéditions \""coloniales\"" Marseille (1789), Santé Marseille, 'Poitou_1789'"
+navigo_pointcalls,captain_id,profiles/navigo_pointcalls_captain_id.csv,Identifiant du capitaine
+navigo_pointcalls,captain_name,profiles/navigo_pointcalls_captain_name.csv,"Nom du capitaine, suivi du prénom, comme dans la source"
+navigo_pointcalls,birthplace,profiles/navigo_pointcalls_birthplace.csv,"Lieu d'origine du capitaine. Exemples : ""Quinto"", ""Dunkerquois"", ""NAntes"", ""Isle Rousse"""
+navigo_pointcalls,status,profiles/navigo_pointcalls_status.csv,Titre du capitaine à bord. Type énuméré à NORMALISER.
+navigo_pointcalls,citizenship,profiles/navigo_pointcalls_citizenship.csv,"Nationalité du capitaine inscrite par l'historien.   Exemples : ""([Tuscan])"", ""([Ragusan])"", ""([Napolitano])"", ""([Genoese])"""
+navigo_pointcalls,commodity_purpose,profiles/navigo_pointcalls_commodity_purpose.csv,Chose (item) transportée ou l’objet du voyage (si pêche par exemple). Telle que saisie. 
+navigo_pointcalls,commodity_id,profiles/navigo_pointcalls_commodity_id.csv,Identifiant du produit dans la base (exemple : sucre est codé 00000147)
+navigo_pointcalls,quantity,profiles/navigo_pointcalls_quantity.csv,Quantité de marchandise telle que exprimée par la source  : 3 balles de coton à 3
+navigo_pointcalls,quantity_u,profiles/navigo_pointcalls_quantity_u.csv,Unité de la quantité de marchandise telle que exprimée par la source  : 3 balles de coton à balles
+navigo_pointcalls,commodity_standardized,profiles/navigo_pointcalls_commodity_standardized.csv,Nom de la chose standardisée en anglais et au singulier. Oil (olive) Nouvelle traduction de Silvia (8 fev 2021)
+navigo_pointcalls,commodity_standardized_fr,profiles/navigo_pointcalls_commodity_standardized_fr.csv,Nom de la chose standardisée en français et au singulier. Oil (olive)
+navigo_pointcalls,commodity_permanent_coding,profiles/navigo_pointcalls_commodity_permanent_coding.csv,"Méta catégorie (un agrégat). Pour les poissons par exemple
+Manque produit coloniaux.
+Value: looked up from the Dictionary of commodities
+"
+navigo_pointcalls,all_cargos,profiles/navigo_pointcalls_all_cargos.csv,"Tableau des cargaisons : [{commodity_purpose:, commodity_id:, quantity:, quantity_u, commodity_standardized:, commodity_permanent_coding:}, …{}]"
+navigo_pointcalls,tax_concept,profiles/navigo_pointcalls_tax_concept.csv,nom de la taxe (ex: droit de congé)
+navigo_pointcalls,payment_date,profiles/navigo_pointcalls_payment_date.csv,Date de paiement de la taxe
+navigo_pointcalls,q01,profiles/navigo_pointcalls_q01.csv,chiffre payé de la  première unité de monnaie (exeple: livre tournois
+navigo_pointcalls,q01_u,profiles/navigo_pointcalls_q01_u.csv,nom de l'unité (livre tournois)
+navigo_pointcalls,q02,profiles/navigo_pointcalls_q02.csv,chiffre payé de la  deuxième unité de monnaie (exeple: sous tournois)
+navigo_pointcalls,q02_u,profiles/navigo_pointcalls_q02_u.csv,nom de l'unité (sous tournois)
+navigo_pointcalls,q03,profiles/navigo_pointcalls_q03.csv,chiffre payé de la  3e unité de monnaie (exeple: deniers tournois)
+navigo_pointcalls,q03_u,profiles/navigo_pointcalls_q03_u.csv,nom de l'unité (deniers tournois)
+navigo_pointcalls,all_taxes,profiles/navigo_pointcalls_all_taxes.csv,"Tableau des taxes : [{tax_concept:,payment_date:, q01:, q01_u:, q02:, q02_u:, q03:, q03_u:}, …{}]"
+navigo_pointcalls,ship_uncertainity,profiles/navigo_pointcalls_ship_uncertainity.csv,"  0 si aucun doute concernant l'identifiant du navire ship_id, 
+-1 si doutes (non concordance du ship_name et du captain_name et du homeport_uhgs_id à la fois)
+ -3 si pointcall_uncertainity 
+-4 si manquant"
+navigo_pointcalls,tonnage_uncertainity,profiles/navigo_pointcalls_tonnage_uncertainity.csv,"0 si pas de gros doute 
+-1 si divergence forte entre les tonnages du même navire, même en prenant en compte la surévaluation de Marennes et Nantes, et en ignorant les petits tonneaux
+-2 si déduit par l'identification d'un navire et recopie du tonnage le plus fréquent du navire identifié
+-3 si  contredit par l'analyse
+-4 si manquant"
+navigo_pointcalls,flag_uncertainity,profiles/navigo_pointcalls_flag_uncertainity.csv,"missing : -4, contredit :-3, déduit [] : -2, () : -1, sans doute : 0 - concernant le pavillon (ship_flag_id)"
+navigo_pointcalls,homeport_uncertainity,profiles/navigo_pointcalls_homeport_uncertainity.csv,"missing : -4, contredit :-3, déduit [] : -2, () : -1, sans doute : 0 -concernant le port d'attache (homeport_uhgs_id)"
+navigo_pointcalls,pointcall_uncertainity,profiles/navigo_pointcalls_pointcall_uncertainity.csv,"0 si status like PC%,  
+-1 si status like  FC%  et que pointcall_function différent de 'O' (Observé); 
+-2 si status like  PU% ,  
+-3 si contradiction lors de l'étude d'un trajet d'un navire entre le point précédent (Z) et le point suivant (net_route_marker = A et point Observé et status like PC%) "
+navigo_pointcalls,captain_uncertainity,profiles/navigo_pointcalls_captain_uncertainity.csv,"missing : -4, contredit :-3, déduit [] : -2, () : -1, sans doute : 0 - concernant l'identifiant du capitaine captain_id"
+navigo_pointcalls,cargo_uncertainity,profiles/navigo_pointcalls_cargo_uncertainity.csv,"manquant : -4, contredits (le navire n'y est pas allé) : -3, déduits [] : -2, doute : -1, certains 0"
+navigo_pointcalls,taxe_uncertainity,profiles/navigo_pointcalls_taxe_uncertainity.csv,"manquant : -4, contredits (le navire n'y est pas allé) : -3, déduits [] : -2, doute : -1, certains 0"
+navigo_pointcalls,pointcall_in_date2,profiles/navigo_pointcalls_pointcall_in_date2.csv,
+navigo_pointcalls,pointcall_out_date2,profiles/navigo_pointcalls_pointcall_out_date2.csv,
+navigo_pointcalls,date_fixed,profiles/navigo_pointcalls_date_fixed.csv,"Date exacte de visite du port si connue (déduite de outdate et indate : coalesce(p.outdate_fixed, p.indate_fixed)"
+navigo_pointcalls,pointcall_rankfull,profiles/navigo_pointcalls_pointcall_rankfull.csv,"Rang de visite d'un port du navire, toutes sources confondues; 1 est le premier."
+navigo_pointcalls,ship_flag_standardized_fr,profiles/navigo_pointcalls_ship_flag_standardized_fr.csv,"Translation in French of the flag of the ship, based on the ship_flag_id"
+navigo_pointcalls,ship_flag_standardized_en,profiles/navigo_pointcalls_ship_flag_standardized_en.csv,"Translation in English of the flag of the ship, based on the ship_flag_id"
+navigo_pointcalls,tonnage_class,profiles/navigo_pointcalls_tonnage_class.csv,"one of [1-20]; [21-50]; [51-100]; [101-200]; [201-500]; [501 et plus] . For instance, for a tonnage of 24, this gives '[21-50]'"
+navigo_pointcalls,commodity_purpose2,profiles/navigo_pointcalls_commodity_purpose2.csv,Chose (item) transportée ou l’objet du voyage (si pêche par exemple). Telle que saisie. 
+navigo_pointcalls,commodity_id2,profiles/navigo_pointcalls_commodity_id2.csv,Identifiant du produit dans la base (exemple : sucre est codé 00000147)
+navigo_pointcalls,quantity2,profiles/navigo_pointcalls_quantity2.csv,Quantité de marchandise telle que exprimée par la source  : 3 balles de coton à 3
+navigo_pointcalls,quantity_u2,profiles/navigo_pointcalls_quantity_u2.csv,Unité de la quantité de marchandise telle que exprimée par la source  : 3 balles de coton à balles
+navigo_pointcalls,commodity_standardized2,profiles/navigo_pointcalls_commodity_standardized2.csv,Nom de la chose standardisée en anglais et au singulier. Oil (olive)
+navigo_pointcalls,commodity_standardized2_fr,profiles/navigo_pointcalls_commodity_standardized2_fr.csv,Nom de la chose standardisée en français et au singulier. Oil (olive)
+navigo_pointcalls,commodity_permanent_coding2,profiles/navigo_pointcalls_commodity_permanent_coding2.csv,"Méta catégorie (un agrégat). Pour les poissons par exemple
+Manque produit coloniaux.
+Value: looked up from the Dictionary of commodities
+"
+navigo_pointcalls,commodity_purpose3,profiles/navigo_pointcalls_commodity_purpose3.csv,Chose (item) transportée ou l’objet du voyage (si pêche par exemple). Telle que saisie. 
+navigo_pointcalls,commodity_id3,profiles/navigo_pointcalls_commodity_id3.csv,Identifiant du produit dans la base (exemple : sucre est codé 00000147)
+navigo_pointcalls,quantity3,profiles/navigo_pointcalls_quantity3.csv,Quantité de marchandise telle que exprimée par la source  : 3 balles de coton à 3
+navigo_pointcalls,quantity_u3,profiles/navigo_pointcalls_quantity_u3.csv,Unité de la quantité de marchandise telle que exprimée par la source  : 3 balles de coton à balles
+navigo_pointcalls,commodity_standardized3,profiles/navigo_pointcalls_commodity_standardized3.csv,Nom de la chose standardisée en anglais et au singulier. Oil (olive)
+navigo_pointcalls,commodity_standardized3_fr,profiles/navigo_pointcalls_commodity_standardized3_fr.csv,Nom de la chose standardisée en français et au singulier. Oil (olive)
+navigo_pointcalls,commodity_permanent_coding3,profiles/navigo_pointcalls_commodity_permanent_coding3.csv,"Méta catégorie (un agrégat). Pour les poissons par exemple
+Manque produit coloniaux.
+Value: looked up from the Dictionary of commodities
+"
+navigo_pointcalls,commodity_purpose4,profiles/navigo_pointcalls_commodity_purpose4.csv,Chose (item) transportée ou l’objet du voyage (si pêche par exemple). Telle que saisie. 
+navigo_pointcalls,commodity_id4,profiles/navigo_pointcalls_commodity_id4.csv,Identifiant du produit dans la base (exemple : sucre est codé 00000147)
+navigo_pointcalls,quantity4,profiles/navigo_pointcalls_quantity4.csv,Quantité de marchandise telle que exprimée par la source  : 3 balles de coton à 3
+navigo_pointcalls,quantity_u4,profiles/navigo_pointcalls_quantity_u4.csv,Unité de la quantité de marchandise telle que exprimée par la source  : 3 balles de coton à balles
+navigo_pointcalls,commodity_standardized4,profiles/navigo_pointcalls_commodity_standardized4.csv,Nom de la chose standardisée en anglais et au singulier. Oil (olive)
+navigo_pointcalls,commodity_standardized4_fr,profiles/navigo_pointcalls_commodity_standardized4_fr.csv,Nom de la chose standardisée en français et au singulier. Oil (olive)
+navigo_pointcalls,commodity_permanent_coding4,profiles/navigo_pointcalls_commodity_permanent_coding4.csv,"Méta catégorie (un agrégat). Pour les poissons par exemple
+Manque produit coloniaux.
+Value: looked up from the Dictionary of commodities
+"
+navigo_pointcalls,data_block_leader_marker,profiles/navigo_pointcalls_data_block_leader_marker.csv," le data_block_leader_marker des données de 1789 est renseigné:
+= ""A"" pour le point d'où les choses sont observés. A toujours été rensiegné car sinon impossible d'insérer la fiche dans Navigo.
+= ""T"" pour destination future (ici on a corrigé des lacunes depuis cet été pour Marseille 1789, donc la version actuelle de Navigo est plus complète) (dernier point mentionné dans l’itinéraire futur déclaré)
+= ""I"" premier point mentionné dans l’itinéraire passé. 
+= si le champ est vide, c'est que c'est des points autres (intermédiaires)
+"
+navigo_pointcalls,pointcall_outdate_uncertainity,profiles/navigo_pointcalls_pointcall_outdate_uncertainity.csv,"0 si suite = 'Marseille', 
+-1 si suite = 'G5', 
+ -3 si la suite 'Marseille' contredit la date de sortie d'un navire vu dans le 'G5'"
+navigo_pointcalls,shipclass_uncertainity,profiles/navigo_pointcalls_shipclass_uncertainity.csv,
+navigo_pointcalls,birthplace_uhgs_id_uncertainity,profiles/navigo_pointcalls_birthplace_uhgs_id_uncertainity.csv,
+navigo_pointcalls,birthplace_uncertainity,profiles/navigo_pointcalls_birthplace_uncertainity.csv,
+navigo_pointcalls,citizenship_uncertainity,profiles/navigo_pointcalls_citizenship_uncertainity.csv,
+navigo_pointcalls,birthplace_uhgs_id,profiles/navigo_pointcalls_birthplace_uhgs_id.csv,
+navigo_flows,travel_id,profiles/navigo_flows_travel_id.csv,Identifiant du trajet
+navigo_flows,distance_dep_dest,profiles/navigo_flows_distance_dep_dest.csv,"Distance en km entre départ et destination, arrondie à 3 decimales, à vol d'oiseau"
+navigo_flows,distance_homeport_dep,profiles/navigo_flows_distance_homeport_dep.csv,"Distance en km entre homeport et départ, arrondie à 3 decimales, à vol d'oiseau"
+navigo_flows,departure,profiles/navigo_flows_departure.csv,Toponyme du port de départ
+navigo_flows,departure_fr,profiles/navigo_flows_departure_fr.csv,"Standardised name of the port de départ, in French"
+navigo_flows,departure_en,profiles/navigo_flows_departure_en.csv,"Standardised name of the port  de départ, in English"
+navigo_flows,departure_uhgs_id,profiles/navigo_flows_departure_uhgs_id.csv,Identifiant géogénéral du port de départ
+navigo_flows,departure_latitude,profiles/navigo_flows_departure_latitude.csv,latitude
+navigo_flows,departure_longitude,profiles/navigo_flows_departure_longitude.csv,longitude
+navigo_flows,departure_admiralty,profiles/navigo_flows_departure_admiralty.csv,amirauté d'appartenance du port
+navigo_flows,departure_province,profiles/navigo_flows_departure_province.csv,province d'appartenance du port
+navigo_flows,departure_states,profiles/navigo_flows_departure_states.csv,"états d'appartenance structurés ainsi : un dictionnaire de couple de dates, état d'appartenance. Les 2 dates les plus extrêmes sont 1749 et 1815. 
+Exemple : [{1749-1768 : République de Gênes}, {1768-1814 : France}]"
+navigo_flows,departure_substates,profiles/navigo_flows_departure_substates.csv,"sous-états d'appartenance structurés ainsi : un dictionnaire de couple de dates, sous-état d'appartenance. Les 2 dates les plus extrêmes sont 1749 et 1815. Exemple :[{""1749-1794"" : ""colonies françaises d'Amérique""},{""1794-1802"" : ""colonies britanniques d'Amérique""},{""1802-1810"" : ""colonies françaises d'Amérique""},{""1810-1815"" : ""colonies britanniques d'Amérique"
+navigo_flows,departure_state_1789_fr,profiles/navigo_flows_departure_state_1789_fr.csv,Etat d'appartenance en 1789 et en 1787 (aucun changement entre ces 2 dates) du port de départ
+navigo_flows,departure_substate_1789_fr,profiles/navigo_flows_departure_substate_1789_fr.csv,Sous-état (sous division comme une colonie par exemple) d'appartenance  du port de départ en 1789 et en 1787 (aucun changement entre ces 2 dates). Nomenclature utile pour analyser les flux commerciaux.
+navigo_flows,departure_state_1789_en,profiles/navigo_flows_departure_state_1789_en.csv,Etat d'appartenance en 1789 et en 1787  du port de départ (aucun changement entre ces 2 dates) en anglais
+navigo_flows,departure_substate_1789_en,profiles/navigo_flows_departure_substate_1789_en.csv,Sous-état (sous division comme une colonie par exemple) d'appartenance  du port de départ en 1789 et en 1787 (aucun changement entre ces 2 dates) en anglais. Nomenclature utile pour analyser les flux commerciaux.
+navigo_flows,departure_ferme_direction,profiles/navigo_flows_departure_ferme_direction.csv,Direction des Fermes à laquelle le port de départ appartient en 1789
+navigo_flows,departure_ferme_bureau,profiles/navigo_flows_departure_ferme_bureau.csv,Bureau des Fermes auquel le port  de départ appartient en 1789
+navigo_flows,departure_ferme_bureau_uncertainty,profiles/navigo_flows_departure_ferme_bureau_uncertainty.csv,"Incertitude concernant le Bureau des Fermes auquel le port  de départ appartient en 1789. 0 si certain, -1 sinon. "
+navigo_flows,departure_partner_balance_1789,profiles/navigo_flows_departure_partner_balance_1789.csv,"Désignation du pays étranger auquel se rattache ce port de départ , suivant les sources toflit'18 (Balance du commerce en 1789 SANS ANOM - Archives Nationales d'Outrer-Mer)"
+navigo_flows,departure_partner_balance_supp_1789,profiles/navigo_flows_departure_partner_balance_supp_1789.csv,"Désignation suivant autre nomenclature (Etranger/France-Sénégal-colonies Françaises) de la destination étrangère auquelle se rattache ce port de départ, suivant les sources toflit'18 (Balance du commerce en 1789. Source  ANOM - Archives Nationales d'Outrer-Mer dans Toflit'18. )"
+navigo_flows,departure_partner_balance_1789_uncertainty,profiles/navigo_flows_departure_partner_balance_1789_uncertainty.csv,"Incertitude concernant la désignation du pays étranger auquel se rattache ce port  de départ, suivant les sources toflit'18 (Balance du commerce en 1789)"
+navigo_flows,departure_partner_balance_supp_1789_uncertainty,profiles/navigo_flows_departure_partner_balance_supp_1789_uncertainty.csv,"Incertitude concernant la désignation du pays étranger suivant seconde nomenclature (supp) auquel se rattache ce port de départ, suivant les sources toflit'18 (Balance du commerce en 1789)"
+navigo_flows,departure_shiparea,profiles/navigo_flows_departure_shiparea.csv,Shipping area telle que calculée par J-P. Dedieu (mer ou ocean et région côtière du point)
+navigo_flows,departure_status,profiles/navigo_flows_departure_status.csv,oblique | siège d'amirauté | rien
+navigo_flows,departure_source_1787_available,profiles/navigo_flows_departure_source_1787_available.csv,"Vrai si on dispose des registres de ce port  de départ en 1787 (qui était oblique), faux sinon (le port  de départ est oblique, mais il n'a pas de registre pour 1787)"
+navigo_flows,departure_source_1789_available,profiles/navigo_flows_departure_source_1789_available.csv,"Vrai si on dispose des registres de ce port  de départ en 1789 (qui était oblique), faux sinon (le port  de départ est oblique, mais il n'a pas de registre pour 1789)"
+navigo_flows,departure_point,profiles/navigo_flows_departure_point.csv,WKT point en EPSG 3857
+navigo_flows,departure_out_date,profiles/navigo_flows_departure_out_date.csv,Date de sortie telle que écrite dans la source
+navigo_flows,departure_action,profiles/navigo_flows_departure_action.csv,In | In-Out | Out | Transit | Loading | Captured | …
+navigo_flows,outdate_fixed,profiles/navigo_flows_outdate_fixed.csv,Date transformée si renseignée de l'observation au départ : yyyy-MM-DD
+navigo_flows,departure_navstatus,profiles/navigo_flows_departure_navstatus.csv,"Passé, ou futur par rapport au point d’observation. Plus intention non realise “J’aurais voulu aller à Malte… mais j’ai été capturé avant »
+P | C -        CO
+F | A -        ML
+   | G -        RF
+   | M -        RC
+   | S -        RS
+   | U -        TT
+Voir http://navigocorpus.org/iDocuments/Documents/Brief%20manual%20of%20use%20for%20Navigocorpus%20database.pdf "
+navigo_flows,departure_function,profiles/navigo_flows_departure_function.csv,"Anciennement, O = point d’observation, T = Terminus (dernier point mentionné dans l’itinéraire futur déclaré), A  = premier point mentionné dans l’itinéraire passé. 
+NB : ce champ n’est plus prévu pour la saisie. Le nouveau champ qui remplace est « data_block_leader_marker » et désormais O devient A ; T reste T.  A devient I ? AUCUN I vu dans la colonne. Que des O ou des A. Pas de T"
+navigo_flows,destination,profiles/navigo_flows_destination.csv,Label (toponyme) du port destination
+navigo_flows,destination_fr,profiles/navigo_flows_destination_fr.csv,"Standardised name of the port d'arrivée , in French"
+navigo_flows,destination_en,profiles/navigo_flows_destination_en.csv,"Standardised name of the port d'arrivée , in English"
+navigo_flows,destination_uhgs_id,profiles/navigo_flows_destination_uhgs_id.csv,Identifiant géogénéral du port destination
+navigo_flows,destination_latitude,profiles/navigo_flows_destination_latitude.csv,latitude
+navigo_flows,destination_longitude,profiles/navigo_flows_destination_longitude.csv,longitude
+navigo_flows,destination_admiralty,profiles/navigo_flows_destination_admiralty.csv,amirauté d'appartenance du port
+navigo_flows,destination_province,profiles/navigo_flows_destination_province.csv,province d'appartenance du port
+navigo_flows,destination_states,profiles/navigo_flows_destination_states.csv,"états d'appartenance structurés ainsi : un dictionnaire de couple de dates, état d'appartenance. Les 2 dates les plus extrêmes sont 1749 et 1815. 
+Exemple : [{1749-1768 : République de Gênes}, {1768-1814 : France}]"
+navigo_flows,destination_substates,profiles/navigo_flows_destination_substates.csv,"sous-états d'appartenance structurés ainsi : un dictionnaire de couple de dates, sous-état d'appartenance. Les 2 dates les plus extrêmes sont 1749 et 1815. Exemple :[{""1749-1794"" : ""colonies françaises d'Amérique""},{""1794-1802"" : ""colonies britanniques d'Amérique""},{""1802-1810"" : ""colonies françaises d'Amérique""},{""1810-1815"" : ""colonies britanniques d'Amérique"
+navigo_flows,destination_state_1789_fr,profiles/navigo_flows_destination_state_1789_fr.csv,Etat d'appartenance en 1789 et en 1787 (aucun changement entre ces 2 dates) du port d'arrivée
+navigo_flows,destination_substate_1789_fr,profiles/navigo_flows_destination_substate_1789_fr.csv,"Sous-état (sous division comme une colonie par exemple) d'appartenance en 1789 et en 1787 (aucun changement entre ces 2 dates). Nomenclature utile pour analyser les flux commerciaux, du port d'arrivée"
+navigo_flows,destination_state_1789_en,profiles/navigo_flows_destination_state_1789_en.csv,Etat d'appartenance en 1789 et en 1787 (aucun changement entre ces 2 dates) en anglais du port d'arrivée
+navigo_flows,destination_substate_1789_en,profiles/navigo_flows_destination_substate_1789_en.csv,"Sous-état (sous division comme une colonie par exemple) d'appartenance en 1789 et en 1787 (aucun changement entre ces 2 dates) en anglais. Nomenclature utile pour analyser les flux commerciaux, du port d'arrivée"
+navigo_flows,destination_ferme_direction,profiles/navigo_flows_destination_ferme_direction.csv,Direction des Fermes à laquelle le port d'arrivée appartient en 1789
+navigo_flows,destination_ferme_bureau,profiles/navigo_flows_destination_ferme_bureau.csv,Bureau des Fermes auquel le port d'arrivée  appartient en 1789
+navigo_flows,destination_ferme_bureau_uncertainty,profiles/navigo_flows_destination_ferme_bureau_uncertainty.csv,"Incertitude concernant le Bureau des Fermes auquel le port d'arrivée appartient en 1789. 0 si certain, -1 sinon. "
+navigo_flows,destination_partner_balance_1789,profiles/navigo_flows_destination_partner_balance_1789.csv,"Désignation du pays étranger auquel se rattache ce port d'arrivée , suivant les sources toflit'18 (Balance du commerce en 1789 SANS ANOM - Archives Nationales d'Outrer-Mer)"
+navigo_flows,destination_partner_balance_supp_1789,profiles/navigo_flows_destination_partner_balance_supp_1789.csv,"Désignation suivant autre nomenclature (Etranger/France-Sénégal-colonies Françaises) de la destination étrangère auquelle se rattache ce port d'arrivée , suivant les sources toflit'18 (Balance du commerce en 1789. Source  ANOM - Archives Nationales d'Outrer-Mer dans Toflit'18. )"
+navigo_flows,destination_partner_balance_1789_uncertainty,profiles/navigo_flows_destination_partner_balance_1789_uncertainty.csv,"Incertitude concernant la désignation du pays étranger auquel se rattache ce port d'arrivée , suivant les sources toflit'18 (Balance du commerce en 1789)"
+navigo_flows,destination_partner_balance_supp_1789_uncertainty,profiles/navigo_flows_destination_partner_balance_supp_1789_uncertainty.csv,"Incertitude concernant la désignation du pays étranger suivant seconde nomenclature (supp) auquel se rattache ce port d'arrivée , suivant les sources toflit'18 (Balance du commerce en 1789)"
+navigo_flows,destination_shiparea,profiles/navigo_flows_destination_shiparea.csv,Shipping area telle que calculée par J-P. Dedieu (mer ou ocean et région côtière du point)
+navigo_flows,destination_status,profiles/navigo_flows_destination_status.csv,oblique | siège d'amirauté
+navigo_flows,destination_source_1787_available,profiles/navigo_flows_destination_source_1787_available.csv,"Vrai si on dispose des registres de ce port d'arrivée en 1787 (qui était oblique), faux sinon (le port est oblique, mais il n'a pas de registre pour 1787)"
+navigo_flows,destination_source_1789_available,profiles/navigo_flows_destination_source_1789_available.csv,"Vrai si on dispose des registres de ce port d'arrivée en 1789 (qui était oblique), faux sinon (le port est oblique, mais il n'a pas de registre pour 1789)"
+navigo_flows,destination_point,profiles/navigo_flows_destination_point.csv,WKT point en EPSG 3857
+navigo_flows,destination_in_date,profiles/navigo_flows_destination_in_date.csv,Date d'arrivée telle que écrite dans la source
+navigo_flows,destination_action,profiles/navigo_flows_destination_action.csv,In | In-Out | Out | Transit | Loading | Captured | … Si renseignée (Marseille)
+navigo_flows,indate_fixed,profiles/navigo_flows_indate_fixed.csv,Date transformée si renseignée de l'observation à la destination : yyyy-MM-DD
+navigo_flows,destination_navstatus,profiles/navigo_flows_destination_navstatus.csv,"Passé, ou futur par rapport au point d’observation. Plus intention non realise “J’aurais voulu aller à Malte… mais j’ai été capturé avant »
+P | C -        CO
+F | A -        ML
+   | G -        RF
+   | M -        RC
+   | S -        RS
+   | U -        TT
+Voir http://navigocorpus.org/iDocuments/Documents/Brief%20manual%20of%20use%20for%20Navigocorpus%20database.pdf "
+navigo_flows,destination_function,profiles/navigo_flows_destination_function.csv,"Anciennement, O = point d’observation, T = Terminus (dernier point mentionné dans l’itinéraire futur déclaré), A  = premier point mentionné dans l’itinéraire passé. 
+NB : ce champ n’est plus prévu pour la saisie. Le nouveau champ qui remplace est « data_block_leader_marker » et désormais O devient A ; T reste T.  A devient I ? AUCUN I vu dans la colonne. Que des O ou des A. Pas de T"
+navigo_flows,ship_name,profiles/navigo_flows_ship_name.csv,Nom du navire tel que lu dans la source
+navigo_flows,ship_id,profiles/navigo_flows_ship_id.csv,Codage pour identifier le navire uniquement à travers plusieurs déclarations dans les sources
+navigo_flows,tonnage,profiles/navigo_flows_tonnage.csv,"Tonnage du navire, noté en réel (virgule pour décimales).  
+ 1 tonneau = 24 quintaux, donc les valeurs de Marseille exprimés généralement en quintaux doivent être converties en tonneaux en divisant par 24
+Mail Silvia du 29 janvier 2020 : Oui mais En faisant attention que l'unité de mesure exprimée soit le quintal car on a également rapporté à Marseille les tonnages en tonneaux de navires identifiés dans d'autres ports."
+navigo_flows,tonnage_unit,profiles/navigo_flows_tonnage_unit.csv,"Unité du tonnage. 46 valeurs différentes.  A harmoniser
+1 tonneau = 24 quintaux, donc les valeurs de Marseille exprimés généralement en quintaux doivent être converties en tonneaux en divisant par 24"
+navigo_flows,tonnage_class,profiles/navigo_flows_tonnage_class.csv,"one of [1-20]; [21-50]; [51-100]; [101-200]; [201-500]; [501 et plus] . For instance, for a tonnage of 24, this gives '[21-50]'"
+navigo_flows,in_crew,profiles/navigo_flows_in_crew.csv,Nombre d'équipage embarqué sur un bateau entrant
+navigo_flows,flag,profiles/navigo_flows_flag.csv,"Pavillon du navire, tel que lu dans la source --> afficher etat d'appartenance dans la viz (celui du homeport)"
+navigo_flows,ship_flag_id,profiles/navigo_flows_ship_flag_id.csv,identifier of the flag
+navigo_flows,ship_flag_standardized_fr,profiles/navigo_flows_ship_flag_standardized_fr.csv,"Translation in French of the flag of the ship, based on the ship_flag_id"
+navigo_flows,ship_flag_standardized_en,profiles/navigo_flows_ship_flag_standardized_en.csv,"Translation in English of the flag of the ship, based on the ship_flag_id"
+navigo_flows,class,profiles/navigo_flows_class.csv,Catégorie de navire (telle que lue dans la source) 
+navigo_flows,homeport,profiles/navigo_flows_homeport.csv,Port d'attache du navire
+navigo_flows,homeport_uhgs_id,profiles/navigo_flows_homeport_uhgs_id.csv,Identifiant géogénéral du port d'attache
+navigo_flows,homeport_latitude,profiles/navigo_flows_homeport_latitude.csv,latitude
+navigo_flows,homeport_longitude,profiles/navigo_flows_homeport_longitude.csv,longitude
+navigo_flows,homeport_admiralty,profiles/navigo_flows_homeport_admiralty.csv,amirauté d'appartenance du port
+navigo_flows,homeport_province,profiles/navigo_flows_homeport_province.csv,province d'appartenance du port
+navigo_flows,homeport_states,profiles/navigo_flows_homeport_states.csv,"états d'appartenance structurés ainsi : un dictionnaire de couple de dates, état d'appartenance. Les 2 dates les plus extrêmes sont 1749 et 1815. 
+Exemple : [{1749-1768 : République de Gênes}, {1768-1814 : France}]"
+navigo_flows,homeport_substates,profiles/navigo_flows_homeport_substates.csv,"sous-états d'appartenance structurés ainsi : un dictionnaire de couple de dates, sous-état d'appartenance. Les 2 dates les plus extrêmes sont 1749 et 1815. Exemple :[{""1749-1794"" : ""colonies françaises d'Amérique""},{""1794-1802"" : ""colonies britanniques d'Amérique""},{""1802-1810"" : ""colonies françaises d'Amérique""},{""1810-1815"" : ""colonies britanniques d'Amérique"
+navigo_flows,homeport_status,profiles/navigo_flows_homeport_status.csv,oblique | siège d'amirauté
+navigo_flows,homeport_shiparea,profiles/navigo_flows_homeport_shiparea.csv,Shipping area telle que calculée par J-P. Dedieu (mer ou ocean et région côtière du point)
+navigo_flows,homeport_point,profiles/navigo_flows_homeport_point.csv,WKT point en EPSG 3857
+navigo_flows,homeport_state_1789_fr,profiles/navigo_flows_homeport_state_1789_fr.csv,Etat d'appartenance en 1789 et en 1787 (aucun changement entre ces 2 dates)
+navigo_flows,homeport_substate_1789_fr,profiles/navigo_flows_homeport_substate_1789_fr.csv,Sous-état (sous division comme une colonie par exemple) d'appartenance en 1789 et en 1787 (aucun changement entre ces 2 dates). Nomenclature utile pour analyser les flux commerciaux.
+navigo_flows,homeport_state_1789_en,profiles/navigo_flows_homeport_state_1789_en.csv,Etat d'appartenance en 1789 et en 1787 (aucun changement entre ces 2 dates) en anglais
+navigo_flows,homeport_substate_1789_en,profiles/navigo_flows_homeport_substate_1789_en.csv,Sous-état (sous division comme une colonie par exemple) d'appartenance en 1789 et en 1787 (aucun changement entre ces 2 dates) en anglais. Nomenclature utile pour analyser les flux commerciaux.
+navigo_flows,homeport_toponyme_fr,profiles/navigo_flows_homeport_toponyme_fr.csv,"Standardised name of the homeport, in French"
+navigo_flows,homeport_toponyme_en,profiles/navigo_flows_homeport_toponyme_en.csv,"Standardised name of the homeport, in English"
+navigo_flows,source_entry,profiles/navigo_flows_source_entry.csv,"from | to | both-to | both-from
+Rq : si la source existe pour ce trajet aux deux extrêmités, le travel sera dupliqué, et noté both-to ou both-from"
+navigo_flows,source_doc_id,profiles/navigo_flows_source_doc_id.csv,Identifiant du document source
+navigo_flows,source_text,profiles/navigo_flows_source_text.csv,Nom complet du document source
+navigo_flows,source_suite,profiles/navigo_flows_source_suite.csv,Marseille | G5
+navigo_flows,source_component,profiles/navigo_flows_source_component.csv,Composante de la source
+navigo_flows,source_number,profiles/navigo_flows_source_number.csv,Numero de page ou d'entrée dans le registre
+navigo_flows,source_other,profiles/navigo_flows_source_other.csv,"Autre information (foliot, ou autre)"
+navigo_flows,source_main_port_uhgs_id,profiles/navigo_flows_source_main_port_uhgs_id.csv,Identifiant du port le plus cité en O de la source
+navigo_flows,source_main_port_toponyme,profiles/navigo_flows_source_main_port_toponyme.csv,Nom du port le plus cité en O de la source
+navigo_flows,source_subset,profiles/navigo_flows_source_subset.csv,"Sous-ensemble de la source fabriqué pour besoin d'analyse : 'Registre du petit cabotage (1786-1787)' à Marseille, Expéditions \""coloniales\"" Marseille (1789), Santé Marseille, 'Poitou_1789'"
+navigo_flows,captain_id,profiles/navigo_flows_captain_id.csv,Identifiant du capitaine
+navigo_flows,captain_name,profiles/navigo_flows_captain_name.csv,"Nom du capitaine, suivi du prénom, comme dans la source"
+navigo_flows,birthplace,profiles/navigo_flows_birthplace.csv,"Lieu d'origine du capitaine. Exemples : ""Quinto"", ""Dunkerquois"", ""NAntes"", ""Isle Rousse"""
+navigo_flows,status,profiles/navigo_flows_status.csv,Titre du capitaine à bord. Type énuméré à NORMALISER.
+navigo_flows,citizenship,profiles/navigo_flows_citizenship.csv,"Nationalité du capitaine inscrite par l'historien.   Exemples : ""([Tuscan])"", ""([Ragusan])"", ""([Napolitano])"", ""([Genoese])"""
+navigo_flows,commodity_purpose,profiles/navigo_flows_commodity_purpose.csv,Chose (item) transportée ou l’objet du voyage (si pêche par exemple). Telle que saisie. 
+navigo_flows,commodity_id,profiles/navigo_flows_commodity_id.csv,Identifiant du produit dans la base (exemple : sucre est codé 00000147)
+navigo_flows,quantity,profiles/navigo_flows_quantity.csv,Quantité de marchandise telle que exprimée par la source  : 3 balles de coton à 3
+navigo_flows,quantity_u,profiles/navigo_flows_quantity_u.csv,Unité de la quantité de marchandise telle que exprimée par la source  : 3 balles de coton à balles
+navigo_flows,commodity_standardized,profiles/navigo_flows_commodity_standardized.csv,Nom de la chose standardisée en anglais et au singulier. Oil (olive) Nouvelle traduction de Silvia (8 fev 2021)
+navigo_flows,commodity_standardized_fr,profiles/navigo_flows_commodity_standardized_fr.csv,Nom de la chose standardisée en français et au singulier. Oil (olive)
+navigo_flows,commodity_permanent_coding,profiles/navigo_flows_commodity_permanent_coding.csv,"Méta catégorie (un agrégat). Pour les poissons par exemple
+Manque produit coloniaux.
+Value: looked up from the Dictionary of commodities
+"
+navigo_flows,commodity_purpose2,profiles/navigo_flows_commodity_purpose2.csv,Chose (item) transportée ou l’objet du voyage (si pêche par exemple). Telle que saisie. 
+navigo_flows,commodity_id2,profiles/navigo_flows_commodity_id2.csv,Identifiant du produit dans la base (exemple : sucre est codé 00000147)
+navigo_flows,quantity2,profiles/navigo_flows_quantity2.csv,Quantité de marchandise telle que exprimée par la source  : 3 balles de coton à 3
+navigo_flows,quantity_u2,profiles/navigo_flows_quantity_u2.csv,Unité de la quantité de marchandise telle que exprimée par la source  : 3 balles de coton à balles
+navigo_flows,commodity_standardized2,profiles/navigo_flows_commodity_standardized2.csv,Nom de la chose standardisée en anglais et au singulier. Oil (olive)
+navigo_flows,commodity_standardized2_fr,profiles/navigo_flows_commodity_standardized2_fr.csv,Nom de la chose standardisée en français et au singulier. Oil (olive)
+navigo_flows,commodity_permanent_coding2,profiles/navigo_flows_commodity_permanent_coding2.csv,"Méta catégorie (un agrégat). Pour les poissons par exemple
+Manque produit coloniaux.
+Value: looked up from the Dictionary of commodities
+"
+navigo_flows,commodity_purpose3,profiles/navigo_flows_commodity_purpose3.csv,Chose (item) transportée ou l’objet du voyage (si pêche par exemple). Telle que saisie. 
+navigo_flows,commodity_id3,profiles/navigo_flows_commodity_id3.csv,Identifiant du produit dans la base (exemple : sucre est codé 00000147)
+navigo_flows,quantity3,profiles/navigo_flows_quantity3.csv,Quantité de marchandise telle que exprimée par la source  : 3 balles de coton à 3
+navigo_flows,quantity_u3,profiles/navigo_flows_quantity_u3.csv,Unité de la quantité de marchandise telle que exprimée par la source  : 3 balles de coton à balles
+navigo_flows,commodity_standardized3,profiles/navigo_flows_commodity_standardized3.csv,Nom de la chose standardisée en anglais et au singulier. Oil (olive)
+navigo_flows,commodity_standardized3_fr,profiles/navigo_flows_commodity_standardized3_fr.csv,Nom de la chose standardisée en français et au singulier. Oil (olive)
+navigo_flows,commodity_permanent_coding3,profiles/navigo_flows_commodity_permanent_coding3.csv,"Méta catégorie (un agrégat). Pour les poissons par exemple
+Manque produit coloniaux.
+Value: looked up from the Dictionary of commodities
+"
+navigo_flows,commodity_purpose4,profiles/navigo_flows_commodity_purpose4.csv,Chose (item) transportée ou l’objet du voyage (si pêche par exemple). Telle que saisie. 
+navigo_flows,commodity_id4,profiles/navigo_flows_commodity_id4.csv,Identifiant du produit dans la base (exemple : sucre est codé 00000147)
+navigo_flows,quantity4,profiles/navigo_flows_quantity4.csv,Quantité de marchandise telle que exprimée par la source  : 3 balles de coton à 3
+navigo_flows,quantity_u4,profiles/navigo_flows_quantity_u4.csv,Unité de la quantité de marchandise telle que exprimée par la source  : 3 balles de coton à balles
+navigo_flows,commodity_standardized4,profiles/navigo_flows_commodity_standardized4.csv,Nom de la chose standardisée en anglais et au singulier. Oil (olive)
+navigo_flows,commodity_standardized4_fr,profiles/navigo_flows_commodity_standardized4_fr.csv,Nom de la chose standardisée en français et au singulier. Oil (olive)
+navigo_flows,commodity_permanent_coding4,profiles/navigo_flows_commodity_permanent_coding4.csv,"Méta catégorie (un agrégat). Pour les poissons par exemple
+Manque produit coloniaux.
+Value: looked up from the Dictionary of commodities
+"
+navigo_flows,all_cargos,profiles/navigo_flows_all_cargos.csv,"Tableau des cargaisons : [{commodity_purpose:, commodity_id:, quantity:, quantity_u, commodity_standardized:, commodity_permanent_coding:}, …{}]"
+navigo_flows,tax_concept,profiles/navigo_flows_tax_concept.csv,nom de la taxe (ex: droit de congé)
+navigo_flows,payment_date,profiles/navigo_flows_payment_date.csv,Date de paiement de la taxe
+navigo_flows,q01,profiles/navigo_flows_q01.csv,chiffre payé de la  première unité de monnaie (exeple: livre tournois
+navigo_flows,q01_u,profiles/navigo_flows_q01_u.csv,nom de l'unité (livre tournois)
+navigo_flows,q02,profiles/navigo_flows_q02.csv,chiffre payé de la  deuxième unité de monnaie (exeple: sous tournois)
+navigo_flows,q02_u,profiles/navigo_flows_q02_u.csv,nom de l'unité (sous tournois)
+navigo_flows,q03,profiles/navigo_flows_q03.csv,chiffre payé de la  3e unité de monnaie (exeple: deniers tournois)
+navigo_flows,q03_u,profiles/navigo_flows_q03_u.csv,nom de l'unité (deniers tournois)
+navigo_flows,all_taxes,profiles/navigo_flows_all_taxes.csv,"Tableau des taxes : [{tax_concept:,payment_date:, q01:, q01_u:, q02:, q02_u:, q03:, q03_u:}, …{}]"
+navigo_flows,ship_uncertainity,profiles/navigo_flows_ship_uncertainity.csv,"  0 si aucun doute concernant l'identifiant du navire ship_id, 
+-1 si doutes (non concordance du ship_name et du captain_name et du homeport_uhgs_id à la fois)
+ -3 si pointcall_uncertainity 
+-4 si manquant"
+navigo_flows,tonnage_uncertainity,profiles/navigo_flows_tonnage_uncertainity.csv,"0 si pas de gros doute 
+-1 si divergence forte entre les tonnages du même navire, même en prenant en compte la surévaluation de Marennes et Nantes, et en ignorant les petits tonneaux
+-2 si déduit par l'identification d'un navire et recopie du tonnage le plus fréquent du navire identifié
+-3 si  contredit par l'analyse
+-4 si manquant"
+navigo_flows,flag_uncertainity,profiles/navigo_flows_flag_uncertainity.csv,"missing : -4, contredit :-3, déduit [] : -2, () : -1, sans doute : 0 - concernant le pavillon (ship_flag_id)"
+navigo_flows,homeport_uncertainity,profiles/navigo_flows_homeport_uncertainity.csv,"missing : -4, contredit :-3, déduit [] : -2, () : -1, sans doute : 0 -concernant le port d'attache (homeport_uhgs_id)"
+navigo_flows,departure_uncertainity,profiles/navigo_flows_departure_uncertainity.csv,"0 si status like PC%,  
+-1 si status like  FC%  et que pointcall_function différent de 'O' (Observé); 
+-2 si status like  PU% ,  
+-3 si contradiction lors de l'étude d'un trajet d'un navire entre le point précédent (Z) et le point suivant (net_route_marker = A et point Observé et status like PC%) "
+navigo_flows,destination_uncertainity,profiles/navigo_flows_destination_uncertainity.csv,"0 si status like PC%,  
+-1 si status like  FC%  et que pointcall_function différent de 'O' (Observé); 
+-2 si status like  PU% ,  
+-3 si contradiction lors de l'étude d'un trajet d'un navire entre le point précédent (Z) et le point suivant (net_route_marker = A et point Observé et status like PC%) "
+navigo_flows,captain_uncertainity,profiles/navigo_flows_captain_uncertainity.csv,"missing : -4, contredit :-3, déduit [] : -2, () : -1, sans doute : 0 - concernant l'identifiant du capitaine captain_id"
+navigo_flows,travel_uncertainity,profiles/navigo_flows_travel_uncertainity.csv,"0 : certifie (les 2 pointcalls sont certains (0), -1 : déclaré (un des 2 pointcalls a pour valeur -1), - 3 : pour non réalisé (un des deux pointcalls contredit (-3) par analyse avec d'autres documents)"
+navigo_flows,cargo_uncertainity,profiles/navigo_flows_cargo_uncertainity.csv,"manquant : -4, contredits (le navire n'y est pas allé) : -3, déduits [] : -2, doute : -1, certains 0"
+navigo_flows,taxe_uncertainity,profiles/navigo_flows_taxe_uncertainity.csv,"manquant : -4, contredits (le navire n'y est pas allé) : -3, déduits [] : -2, doute : -1, certains 0"
+navigo_flows,pointcall_outdate_uncertainity,profiles/navigo_flows_pointcall_outdate_uncertainity.csv,"0 si suite = 'Marseille', 
+-1 si suite = 'G5', 
+ -3 si la suite 'Marseille' contredit la date de sortie d'un navire vu dans le 'G5'"
+navigo_flows,departure_pkid,profiles/navigo_flows_departure_pkid.csv,Identifier of the record describing the departure (from) - join to navigoviz.pointcall.pkid
+navigo_flows,destination_pkid,profiles/navigo_flows_destination_pkid.csv,Identifier of the record describing the destination (to) - join to navigoviz.pointcall.pkid
+navigo_flows,travel_rank,profiles/navigo_flows_travel_rank.csv,Ordre du troncon sur la route du navire (rank du pointcall de départ)
+navigo_flows,distance_dep_dest_miles,profiles/navigo_flows_distance_dep_dest_miles.csv,"Distance en miles nautiques entre le départ et la destination, estimée par Jean-Pierre Dedieu"
+navigo_flows,distance_homeport_dep_miles,profiles/navigo_flows_distance_homeport_dep_miles.csv,"Distance en miles nautiques entre le port d'attache et le départ, estimée par Jean-Pierre Dedieu"
+navigo_flows,subject,profiles/navigo_flows_subject.csv,
+navigo_flows,subject_order,profiles/navigo_flows_subject_order.csv,
+toflit18,line_number,profiles/toflit18_line_number.csv,Line identification in the retranscription - Identification de la ligne dans la retranscription
+toflit18,source_type,profiles/toflit18_source_type.csv,Source type (see http://toflit18.medialab.sciences-po.fr/#/exploration/sources)
+toflit18,year,profiles/toflit18_year.csv,"Year of the trade flow, beware can't be more complex than digits -- Année du flux commercial"
+toflit18,customs_region,profiles/toflit18_customs_region.csv,Geographical customs region in which the trade flow has been registered ('Direction des traites') -- Direction des traites dans laquelle le flux a été enregistré
+toflit18,partner,profiles/toflit18_partner.csv,Partner country or region for this trade flow -- Pays ou région partenaire pour ce flux commercial (importateur ou exportateur)
+toflit18,partner_orthographic,profiles/toflit18_partner_orthographic.csv,
+toflit18,export_import,profiles/toflit18_export_import.csv,This variable identifies import or export trade flows -- Cette variable indique s'il s'agit d'un flux d'importation ou d'exportation
+toflit18,product,profiles/toflit18_product.csv,
+toflit18,product_orthographic,profiles/toflit18_product_orthographic.csv,
+toflit18,value,profiles/toflit18_value.csv,"Value of the trade flow in livres tournois or francs -- Valeur du flux commercial, en livres tournois ou en francs"
+toflit18,quantity,profiles/toflit18_quantity.csv,Product quantity (in quantity unit mentionned in 'quantity_unit' -- Quantité de marchandises (en unité de quantité mentionnée en 'quantitie_unite'
+toflit18,quantity_unit,profiles/toflit18_quantity_unit.csv,Product quantity unit -- Unité de mesure de la quantité de marchandise
+toflit18,quantity_unit_orthographic,profiles/toflit18_quantity_unit_orthographic.csv,
+toflit18,value_per_unit,profiles/toflit18_value_per_unit.csv,Value per unit -- Valeur par unité
+toflit18,yearstr,profiles/toflit18_yearstr.csv,
+toflit18,customs_region_origin,profiles/toflit18_customs_region_origin.csv,
+toflit18,customs_office,profiles/toflit18_customs_office.csv,Geographical customs office in which the trade flow has been registered. A customs office is part of a customs region -- Bureau des traites dans lequel le flux a été enregistré
+toflit18,origin_origin,profiles/toflit18_origin_origin.csv,
+toflit18,width_in_line,profiles/toflit18_width_in_line.csv,Width in line for textiles -- Largeure en lignes des tissus
+toflit18,value_part_of_bundle,profiles/toflit18_value_part_of_bundle.csv,This variables identifies trade flows where multiple quantities are associated to a single total value. This number indicates the order of the flow in the bundle. Value is indicated for the bundle but repeated in all flows. Beware of double accounts use only one value by bundle. -- Cette variable identifie les flux pour lesquels plusieurs quantitiés correspondent à une seule valeur. Ce nombre indique l'index dans l'ordre dans le groupe. La valeur concerne le groupe en entier et est répétée dans chaque flux. Attention aux doubles comptes.
+toflit18,filepath,profiles/toflit18_filepath.csv,Localisation of the retranscription file in the git depository -- Emplacement du fichier retranscrit dans le repértoire git
+toflit18,source,profiles/toflit18_source.csv,Source identification
+toflit18,sheet,profiles/toflit18_sheet.csv,Page or picture number in the digitized source - Numéro de la page ou de la photo dans la source numérisée
+toflit18,value_total,profiles/toflit18_value_total.csv,Total value of some succeding flows given by the source -- Total d'une suite de flux donné dans la source
+toflit18,value_sub_total_1,profiles/toflit18_value_sub_total_1.csv,Partial total given in the source (level 1) -- Total partiel donné dans la source (niveau 1)
+toflit18,value_sub_total_2,profiles/toflit18_value_sub_total_2.csv,Partial total given in the source (level 2) -- Total partiel donné dans la source (niveau 2)
+toflit18,value_sub_total_3,profiles/toflit18_value_sub_total_3.csv,Partial total given in the source (level 3) -- Total partiel donné dans la source (niveau 3)
+toflit18,data_collector,profiles/toflit18_data_collector.csv,Data collector name -- Nom du retranscripteur
+toflit18,unverified,profiles/toflit18_unverified.csv,The retranscription has not been checked -- Le retranscription n'a pas été vérifée
+toflit18,remarks,profiles/toflit18_remarks.csv,Various remarks -- Remarques diverses
+toflit18,value_minus_un_source,profiles/toflit18_value_minus_un_source.csv,
+toflit18,absurd_observation,profiles/toflit18_absurd_observation.csv,Signals absurd observations present in sources (absurd) and guess to replace them (guess) -- Signale des observations absurdes présentes dans les sources (absurd) et des propositions de remplacement (guess)
+toflit18,duty_quantity,profiles/toflit18_duty_quantity.csv,"Product quantity (in quantity unit used for duty, mentionned in duty_quantity_unit) -- Quantité de marchandises (en unité de quantité utilisée pour les droits, mentionnée dans duty_quantity_unit)"
+toflit18,duty_quantity_unit,profiles/toflit18_duty_quantity_unit.csv,Product quantity unit used for duty -- Unité de mesure de la quantité de marchandise utilisée pour le calcul des droits
+toflit18,duty_by_unit,profiles/toflit18_duty_by_unit.csv,Duty per unit -- Droits de douane par unité
+toflit18,duty_total,profiles/toflit18_duty_total.csv,Total duties -- Droits de douane totaux
+toflit18,duty_part_of_bundle,profiles/toflit18_duty_part_of_bundle.csv,This variables identifies trade flows where a single duty payment is associated to duty payments on multiple trade flows -- Cette variable identifie les flux pour lesquels un total de droits de douane correspond à la somme des droits de douanes sur plusieurs flux
+toflit18,duty_remarks,profiles/toflit18_duty_remarks.csv,Various remarks on duties -- Remarques diverses sur les droits
+toflit18,customs_region_grouping,profiles/toflit18_customs_region_grouping.csv,
+toflit18,origin,profiles/toflit18_origin.csv,
+toflit18,partner_simplification,profiles/toflit18_partner_simplification.csv,
+toflit18,partner_grouping,profiles/toflit18_partner_grouping.csv,
+toflit18,partner_obrien,profiles/toflit18_partner_obrien.csv,
+toflit18,partner_sourcename,profiles/toflit18_partner_sourcename.csv,
+toflit18,partner_wars,profiles/toflit18_partner_wars.csv,
+toflit18,partner_africa,profiles/toflit18_partner_africa.csv,
+toflit18,nb_occurence_BdCFR,profiles/toflit18_nb_occurence_BdCFR.csv,
+toflit18,product_simplification,profiles/toflit18_product_simplification.csv,
+toflit18,product_sitc,profiles/toflit18_product_sitc.csv,
+toflit18,imprimatur,profiles/toflit18_imprimatur.csv,
+toflit18,product_edentreaty,profiles/toflit18_product_edentreaty.csv,
+toflit18,surement_pas_canada,profiles/toflit18_surement_pas_canada.csv,
+toflit18,product_canada,profiles/toflit18_product_canada.csv,
+toflit18,details_provenance,profiles/toflit18_details_provenance.csv,
+toflit18,peche,profiles/toflit18_peche.csv,
+toflit18,product_medicinales,profiles/toflit18_product_medicinales.csv,
+toflit18,nbr_obs,profiles/toflit18_nbr_obs.csv,
+toflit18,product_hamburg,profiles/toflit18_product_hamburg.csv,
+toflit18,product_grains,profiles/toflit18_product_grains.csv,
+toflit18,product_coton,profiles/toflit18_product_coton.csv,
+toflit18,product_ulrich,profiles/toflit18_product_ulrich.csv,
+toflit18,product_coffee,profiles/toflit18_product_coffee.csv,
+toflit18,product_porcelaine,profiles/toflit18_product_porcelaine.csv,
+toflit18,product_v_glass_beads,profiles/toflit18_product_v_glass_beads.csv,
+toflit18,product_revolutionempire,profiles/toflit18_product_revolutionempire.csv,
+toflit18,product_beaver,profiles/toflit18_product_beaver.csv,
+toflit18,product_type_textile,profiles/toflit18_product_type_textile.csv,
+toflit18,product_luxe_dans_type,profiles/toflit18_product_luxe_dans_type.csv,
+toflit18,product_luxe_dans_SITC,profiles/toflit18_product_luxe_dans_SITC.csv,
+toflit18,product_sitc_FR,profiles/toflit18_product_sitc_FR.csv,
+toflit18,product_sitc_EN,profiles/toflit18_product_sitc_EN.csv,
+toflit18,product_sitc_simplEN,profiles/toflit18_product_sitc_simplEN.csv,
+toflit18,obsolete,profiles/toflit18_obsolete.csv,
+toflit18,product_RE_aggregate,profiles/toflit18_product_RE_aggregate.csv,
+toflit18,product_threesectors,profiles/toflit18_product_threesectors.csv,
+toflit18,product_threesectorsM,profiles/toflit18_product_threesectorsM.csv,
+toflit18,quantity_unit_simplification,profiles/toflit18_quantity_unit_simplification.csv,
+toflit18,conv_orthographic_to_simplificat,profiles/toflit18_conv_orthographic_to_simplificat.csv,
+toflit18,quantity_unit_metric,profiles/toflit18_quantity_unit_metric.csv,
+toflit18,conv_simplification_to_metric,profiles/toflit18_conv_simplification_to_metric.csv,
+toflit18,needs_more_details,profiles/toflit18_needs_more_details.csv,
+toflit18,quantities_metric,profiles/toflit18_quantities_metric.csv,
+toflit18,unit_price_metric,profiles/toflit18_unit_price_metric.csv,
+toflit18,best_guess_national_prodxpart,profiles/toflit18_best_guess_national_prodxpart.csv,
+toflit18,best_guess_national_partner,profiles/toflit18_best_guess_national_partner.csv,
+toflit18,best_guess_national_product,profiles/toflit18_best_guess_national_product.csv,
+toflit18,best_guess_region_prodxpart,profiles/toflit18_best_guess_region_prodxpart.csv,
+toflit18,best_guess_national_region,profiles/toflit18_best_guess_national_region.csv,
+toflit18,computed_value,profiles/toflit18_computed_value.csv,
+toflit18,value_as_reported,profiles/toflit18_value_as_reported.csv,
+toflit18,computed_value_per_unit,profiles/toflit18_computed_value_per_unit.csv,
+toflit18,computed_quantity,profiles/toflit18_computed_quantity.csv,
+toflit18,value_minus_unit_val_x_qty,profiles/toflit18_value_minus_unit_val_x_qty.csv,"Difference between the value in the source and the value computed based on unit prices and quantities (if negative, the value in the source is smaller) -- Différence entre la valeur annoncée du flux et celle calculée à partir du prix unitaire et des quantités (si négatif, la valeur annoncée est plus petite)"
