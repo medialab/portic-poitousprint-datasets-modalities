@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/portic-poitousprint-datasets-modalities/static/css/main.bfa4f7fc.chunk.css",
+    "main.js": "/portic-poitousprint-datasets-modalities/static/js/main.db64d9a8.chunk.js",
+    "main.js.map": "/portic-poitousprint-datasets-modalities/static/js/main.db64d9a8.chunk.js.map",
+    "runtime-main.js": "/portic-poitousprint-datasets-modalities/static/js/runtime-main.9dc35433.js",
+    "runtime-main.js.map": "/portic-poitousprint-datasets-modalities/static/js/runtime-main.9dc35433.js.map",
+    "static/js/2.45a25540.chunk.js": "/portic-poitousprint-datasets-modalities/static/js/2.45a25540.chunk.js",
+    "static/js/2.45a25540.chunk.js.map": "/portic-poitousprint-datasets-modalities/static/js/2.45a25540.chunk.js.map",
+    "static/js/3.878e9285.chunk.js": "/portic-poitousprint-datasets-modalities/static/js/3.878e9285.chunk.js",
+    "static/js/3.878e9285.chunk.js.map": "/portic-poitousprint-datasets-modalities/static/js/3.878e9285.chunk.js.map",
+    "index.html": "/portic-poitousprint-datasets-modalities/index.html",
+    "static/css/main.bfa4f7fc.chunk.css.map": "/portic-poitousprint-datasets-modalities/static/css/main.bfa4f7fc.chunk.css.map",
+    "static/js/2.45a25540.chunk.js.LICENSE.txt": "/portic-poitousprint-datasets-modalities/static/js/2.45a25540.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9dc35433.js",
+    "static/js/2.45a25540.chunk.js",
+    "static/css/main.bfa4f7fc.chunk.css",
+    "static/js/main.db64d9a8.chunk.js"
+  ]
+}
