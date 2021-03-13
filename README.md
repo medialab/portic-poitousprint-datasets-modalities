@@ -25,3 +25,12 @@ From the folder `portic-poitousprint-datasets-modalities`, run in your terminal 
 ```
 npm run start
 ```
+
+# Deploy updated data
+
+Run :
+
+```
+./install.sh
+npm run deploy
+```
