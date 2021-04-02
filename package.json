@@ -1,6 +1,6 @@
 {
   "name": "datasprint-data-modalities",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "homepage": "http://medialab.github.io/portic-poitousprint-datasets-modalities",
   "dependencies": {
