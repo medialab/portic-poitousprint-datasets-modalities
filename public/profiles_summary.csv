@@ -18,8 +18,11 @@ navigo_pointcalls,state_1789_fr,profiles/navigo_pointcalls_state_1789_fr.csv,Eta
 navigo_pointcalls,state_1789_en,profiles/navigo_pointcalls_state_1789_en.csv,Etat d'appartenance en 1789 et en 1787 (aucun changement entre ces 2 dates) en anglais
 navigo_pointcalls,substate_1789_fr,profiles/navigo_pointcalls_substate_1789_fr.csv,Sous-état (sous division comme une colonie par exemple) d'appartenance en 1789 et en 1787 (aucun changement entre ces 2 dates). Nomenclature utile pour analyser les flux commerciaux.
 navigo_pointcalls,substate_1789_en,profiles/navigo_pointcalls_substate_1789_en.csv,Sous-état (sous division comme une colonie par exemple) d'appartenance en 1789 et en 1787 (aucun changement entre ces 2 dates) en anglais. Nomenclature utile pour analyser les flux commerciaux.
-navigo_pointcalls,source_1787_available,profiles/navigo_pointcalls_source_1787_available.csv,"Vrai si on dispose des registres de ce port en 1787 (qui était oblique), faux sinon (le port est oblique, mais il n'a pas de registre pour 1787)"
-navigo_pointcalls,source_1789_available,profiles/navigo_pointcalls_source_1789_available.csv,"Vrai si on dispose des registres de ce port en 1789 (qui était oblique), faux sinon (le port est oblique, mais il n'a pas de registre pour 1789)"
+navigo_pointcalls,nb_conges_1787_inputdone,profiles/navigo_pointcalls_nb_conges_1787_inputdone.csv,Nombre de congés (nombre de source_doc_id différents) pour ce port en 1787 qui ont été saisis dans la base
+navigo_pointcalls,nb_conges_1787_cr,profiles/navigo_pointcalls_nb_conges_1787_cr.csv,"Nombre de congés  pour ce port en 1787 qui devraient exister de par les archives et pourraient être saisis (enquête des historiens, donc on n'est jamais certain d'avoir tout repéré) si les archives ont été conservées et sont lisibles."
+navigo_pointcalls,nb_conges_1789_inputdone,profiles/navigo_pointcalls_nb_conges_1789_inputdone.csv,Nombre de congés (nombre de source_doc_id différents) pour ce port en 1789 qui ont été saisis dans la base
+navigo_pointcalls,nb_conges_1789_cr,profiles/navigo_pointcalls_nb_conges_1789_cr.csv,"Nombre de congés  pour ce port en 1789 qui devraient exister de par les archives et pourraient être saisis (enquête des historiens, donc on n'est jamais certain d'avoir tout repéré) si les archives ont été conservées et sont lisibles. "
+navigo_pointcalls,pointcall_status_uncertainity,profiles/navigo_pointcalls_pointcall_status_uncertainity.csv,0 si certain : -1 si doute ; -2 si gros doute
 navigo_pointcalls,pointcall_status,profiles/navigo_pointcalls_pointcall_status.csv,oblique | siège d'amirauté | rien
 navigo_pointcalls,shiparea,profiles/navigo_pointcalls_shiparea.csv,Shipping area telle que calculée par J-P. Dedieu (mer ou ocean et région côtière du point)
 navigo_pointcalls,pointcall_point,profiles/navigo_pointcalls_pointcall_point.csv,WKT point en EPSG 3857
@@ -34,7 +37,9 @@ navigo_pointcalls,pointcall_out_date,profiles/navigo_pointcalls_pointcall_out_da
 navigo_pointcalls,pointcall_action,profiles/navigo_pointcalls_pointcall_action.csv,In | In-Out | Out | Transit | Loading | Captured | …
 navigo_pointcalls,outdate_fixed,profiles/navigo_pointcalls_outdate_fixed.csv,Date transformée si renseignée de l'observation au départ : yyyy-MM-DD
 navigo_pointcalls,pointcall_in_date,profiles/navigo_pointcalls_pointcall_in_date.csv,Date d'arrivée telle que écrite dans la source
-navigo_pointcalls,indate_fixed,profiles/navigo_pointcalls_indate_fixed.csv,Date transformée si renseignée de l'observation à la destination : yyyy-MM-DD
+navigo_pointcalls,indate_fixed,profiles/navigo_pointcalls_indate_fixed.csv,"C'est la date d'arrivée au plus tard par rapport à la date de départ suivant observé pour le même ship_id.
+coalesce(p.outdate_fixed, p.indate_fixed) avec p = le point d'arrivée. 
+Ce qui signifie que pour presque toute la suite G5, c'est une donnée ""au plus tard"" calculée, qui dépend de la bonne identification du navire. "
 navigo_pointcalls,net_route_marker,profiles/navigo_pointcalls_net_route_marker.csv,"A ou Z. Si Z, ne pas garder pour composer la route"
 navigo_pointcalls,pointcall_function,profiles/navigo_pointcalls_pointcall_function.csv,"Anciennement, O = point d’observation, T = Terminus (dernier point mentionné dans l’itinéraire futur déclaré), A  = premier point mentionné dans l’itinéraire passé. 
 NB : ce champ n’est plus prévu pour la saisie. Le nouveau champ qui remplace est « data_block_leader_marker » et désormais O devient A ; T reste T.  A devient I ? AUCUN I vu dans la colonne. Que des O ou des A. Pas de T"
@@ -51,8 +56,7 @@ navigo_pointcalls,ship_id,profiles/navigo_pointcalls_ship_id.csv,Codage pour ide
 navigo_pointcalls,tonnage,profiles/navigo_pointcalls_tonnage.csv,"Tonnage du navire, noté en réel (virgule pour décimales).  
  1 tonneau = 24 quintaux, donc les valeurs de Marseille exprimés généralement en quintaux doivent être converties en tonneaux en divisant par 24
 Mail Silvia du 29 janvier 2020 : Oui mais En faisant attention que l'unité de mesure exprimée soit le quintal car on a également rapporté à Marseille les tonnages en tonneaux de navires identifiés dans d'autres ports."
-navigo_pointcalls,tonnage_unit,profiles/navigo_pointcalls_tonnage_unit.csv,"Unité du tonnage. 46 valeurs différentes.  A harmoniser
-1 tonneau = 24 quintaux, donc les valeurs de Marseille exprimés généralement en quintaux doivent être converties en tonneaux en divisant par 24"
+navigo_pointcalls,tonnage_unit,profiles/navigo_pointcalls_tonnage_unit.csv,Unité du tonnage. 46 valeurs différentes.  A harmoniser
 navigo_pointcalls,flag,profiles/navigo_pointcalls_flag.csv,"Pavillon du navire, tel que lu dans la source --> afficher etat d'appartenance dans la viz (celui du homeport)"
 navigo_pointcalls,class,profiles/navigo_pointcalls_class.csv,Catégorie de navire (telle que lue dans la source) 
 navigo_pointcalls,ship_flag_id,profiles/navigo_pointcalls_ship_flag_id.csv,identifier of the flag
@@ -76,8 +80,11 @@ navigo_pointcalls,homeport_state_1789_fr,profiles/navigo_pointcalls_homeport_sta
 navigo_pointcalls,homeport_state_1789_en,profiles/navigo_pointcalls_homeport_state_1789_en.csv,Etat d'appartenance en 1789 et en 1787 (aucun changement entre ces 2 dates) en anglais
 navigo_pointcalls,homeport_substate_1789_fr,profiles/navigo_pointcalls_homeport_substate_1789_fr.csv,Sous-état (sous division comme une colonie par exemple) d'appartenance en 1789 et en 1787 (aucun changement entre ces 2 dates). Nomenclature utile pour analyser les flux commerciaux.
 navigo_pointcalls,homeport_substate_1789_en,profiles/navigo_pointcalls_homeport_substate_1789_en.csv,Sous-état (sous division comme une colonie par exemple) d'appartenance en 1789 et en 1787 (aucun changement entre ces 2 dates) en anglais. Nomenclature utile pour analyser les flux commerciaux.
-navigo_pointcalls,homeport_source_1787_available,profiles/navigo_pointcalls_homeport_source_1787_available.csv,"Vrai si on dispose des registres de ce port en 1787 (qui était oblique), faux sinon (le port est oblique, mais il n'a pas de registre pour 1787)"
-navigo_pointcalls,homeport_source_1789_available,profiles/navigo_pointcalls_homeport_source_1789_available.csv,"Vrai si on dispose des registres de ce port en 1789 (qui était oblique), faux sinon (le port est oblique, mais il n'a pas de registre pour 1789)"
+navigo_pointcalls,homeport_nb_conges_1787_inputdone,profiles/navigo_pointcalls_homeport_nb_conges_1787_inputdone.csv,Nombre de congés (nombre de source_doc_id différents) pour ce port en 1787 qui ont été saisis dans la base
+navigo_pointcalls,homeport_nb_conges_1787_cr,profiles/navigo_pointcalls_homeport_nb_conges_1787_cr.csv,"Nombre de congés  pour ce port en 1787 qui devraient exister de par les archives et pourraient être saisis (enquête des historiens, donc on n'est jamais certain d'avoir tout repéré) si les archives ont été conservées et sont lisibles."
+navigo_pointcalls,homeport_nb_conges_1789_inputdone,profiles/navigo_pointcalls_homeport_nb_conges_1789_inputdone.csv,Nombre de congés (nombre de source_doc_id différents) pour ce port en 1789 qui ont été saisis dans la base
+navigo_pointcalls,homeport_nb_conges_1789_cr,profiles/navigo_pointcalls_homeport_nb_conges_1789_cr.csv,"Nombre de congés  pour ce port en 1789 qui devraient exister de par les archives et pourraient être saisis (enquête des historiens, donc on n'est jamais certain d'avoir tout repéré) si les archives ont été conservées et sont lisibles. "
+navigo_pointcalls,homeport_status_uncertainity,profiles/navigo_pointcalls_homeport_status_uncertainity.csv,0 si certain : -1 si doute ; -2 si gros doute
 navigo_pointcalls,homeport_status,profiles/navigo_pointcalls_homeport_status.csv,oblique | siège d'amirauté
 navigo_pointcalls,homeport_shiparea,profiles/navigo_pointcalls_homeport_shiparea.csv,Shipping area telle que calculée par J-P. Dedieu (mer ou ocean et région côtière du point)
 navigo_pointcalls,homeport_point,profiles/navigo_pointcalls_homeport_point.csv,WKT point en EPSG 3857
@@ -100,28 +107,45 @@ navigo_pointcalls,source_subset,profiles/navigo_pointcalls_source_subset.csv,"So
 navigo_pointcalls,captain_id,profiles/navigo_pointcalls_captain_id.csv,Identifiant du capitaine
 navigo_pointcalls,captain_name,profiles/navigo_pointcalls_captain_name.csv,"Nom du capitaine, suivi du prénom, comme dans la source"
 navigo_pointcalls,birthplace,profiles/navigo_pointcalls_birthplace.csv,"Lieu d'origine du capitaine. Exemples : ""Quinto"", ""Dunkerquois"", ""NAntes"", ""Isle Rousse"""
+navigo_pointcalls,birthplace_uhgs_id,profiles/navigo_pointcalls_birthplace_uhgs_id.csv,"Codage du lieu d'origine du capitaine, par le code du port correspondant au birthplace."
 navigo_pointcalls,status,profiles/navigo_pointcalls_status.csv,Titre du capitaine à bord. Type énuméré à NORMALISER.
 navigo_pointcalls,citizenship,profiles/navigo_pointcalls_citizenship.csv,"Nationalité du capitaine inscrite par l'historien.   Exemples : ""([Tuscan])"", ""([Ragusan])"", ""([Napolitano])"", ""([Genoese])"""
 navigo_pointcalls,commodity_purpose,profiles/navigo_pointcalls_commodity_purpose.csv,Chose (item) transportée ou l’objet du voyage (si pêche par exemple). Telle que saisie. 
 navigo_pointcalls,commodity_id,profiles/navigo_pointcalls_commodity_id.csv,Identifiant du produit dans la base (exemple : sucre est codé 00000147)
 navigo_pointcalls,quantity,profiles/navigo_pointcalls_quantity.csv,Quantité de marchandise telle que exprimée par la source  : 3 balles de coton à 3
 navigo_pointcalls,quantity_u,profiles/navigo_pointcalls_quantity_u.csv,Unité de la quantité de marchandise telle que exprimée par la source  : 3 balles de coton à balles
-navigo_pointcalls,commodity_standardized,profiles/navigo_pointcalls_commodity_standardized.csv,Nom de la chose standardisée en anglais et au singulier. Oil (olive) Nouvelle traduction de Silvia (8 fev 2021)
+navigo_pointcalls,commodity_standardized,profiles/navigo_pointcalls_commodity_standardized.csv,Nom de la chose standardisée en anglais et au singulier. Oil (olive)
 navigo_pointcalls,commodity_standardized_fr,profiles/navigo_pointcalls_commodity_standardized_fr.csv,Nom de la chose standardisée en français et au singulier. Oil (olive)
 navigo_pointcalls,commodity_permanent_coding,profiles/navigo_pointcalls_commodity_permanent_coding.csv,"Méta catégorie (un agrégat). Pour les poissons par exemple
 Manque produit coloniaux.
 Value: looked up from the Dictionary of commodities
 "
 navigo_pointcalls,all_cargos,profiles/navigo_pointcalls_all_cargos.csv,"Tableau des cargaisons : [{commodity_purpose:, commodity_id:, quantity:, quantity_u, commodity_standardized:, commodity_permanent_coding:}, …{}]"
-navigo_pointcalls,tax_concept,profiles/navigo_pointcalls_tax_concept.csv,nom de la taxe (ex: droit de congé)
-navigo_pointcalls,payment_date,profiles/navigo_pointcalls_payment_date.csv,Date de paiement de la taxe
-navigo_pointcalls,q01,profiles/navigo_pointcalls_q01.csv,chiffre payé de la  première unité de monnaie (exeple: livre tournois
+navigo_pointcalls,tax_concept1,profiles/navigo_pointcalls_tax_concept1.csv,nom de la taxe numero 1 (ex: droit de congé)
+navigo_pointcalls,payment_date,profiles/navigo_pointcalls_payment_date.csv,Date de paiement de la taxe 1
+navigo_pointcalls,q01_1,profiles/navigo_pointcalls_q01_1.csv,chiffre payé de la  première unité de monnaie (exemple: livre tournois) pour la taxe numero 1
 navigo_pointcalls,q01_u,profiles/navigo_pointcalls_q01_u.csv,nom de l'unité (livre tournois)
-navigo_pointcalls,q02,profiles/navigo_pointcalls_q02.csv,chiffre payé de la  deuxième unité de monnaie (exeple: sous tournois)
+navigo_pointcalls,q02_1,profiles/navigo_pointcalls_q02_1.csv,chiffre payé de la  deuxième unité de monnaie (exemple: sous tournois) pour la taxe numero 2
 navigo_pointcalls,q02_u,profiles/navigo_pointcalls_q02_u.csv,nom de l'unité (sous tournois)
-navigo_pointcalls,q03,profiles/navigo_pointcalls_q03.csv,chiffre payé de la  3e unité de monnaie (exeple: deniers tournois)
+navigo_pointcalls,q03_1,profiles/navigo_pointcalls_q03_1.csv,chiffre payé de la  3e unité de monnaie (exemple: deniers tournois) pour la texe numero 3
 navigo_pointcalls,q03_u,profiles/navigo_pointcalls_q03_u.csv,nom de l'unité (deniers tournois)
 navigo_pointcalls,all_taxes,profiles/navigo_pointcalls_all_taxes.csv,"Tableau des taxes : [{tax_concept:,payment_date:, q01:, q01_u:, q02:, q02_u:, q03:, q03_u:}, …{}]"
+navigo_pointcalls,tax_concept2,profiles/navigo_pointcalls_tax_concept2.csv,nom de la taxe (ex: droit de congé) numero 2 (il y a au plus 5 taxes par entrée documentaire pour un navire sur tout le corpus
+navigo_pointcalls,q01_2,profiles/navigo_pointcalls_q01_2.csv,chiffre payé de la  première unité de monnaie (exemple: livre tournois) pour la taxe numero 2
+navigo_pointcalls,q02_2,profiles/navigo_pointcalls_q02_2.csv,chiffre payé de la  deuxième unité de monnaie (exemple: sous tournois) pour la taxe numero 2
+navigo_pointcalls,q03_2,profiles/navigo_pointcalls_q03_2.csv,chiffre payé de la  3e unité de monnaie (exemple: deniers tournois) pour la taxe numero 2
+navigo_pointcalls,tax_concept3,profiles/navigo_pointcalls_tax_concept3.csv,nom de la taxe (ex: droit de congé) numero 3 (il y a au plus 5 taxes par entrée documentaire pour un navire sur tout le corpus
+navigo_pointcalls,q01_3,profiles/navigo_pointcalls_q01_3.csv,chiffre payé de la  première unité de monnaie (exemple: livre tournois) pour la taxe numero 3
+navigo_pointcalls,q02_3,profiles/navigo_pointcalls_q02_3.csv,chiffre payé de la  deuxième unité de monnaie (exemple: sous tournois) pour la taxe numero 3
+navigo_pointcalls,q03_3,profiles/navigo_pointcalls_q03_3.csv,chiffre payé de la  3e unité de monnaie (exemple: deniers tournois) pour la taxe numero 3
+navigo_pointcalls,tax_concept4,profiles/navigo_pointcalls_tax_concept4.csv,nom de la taxe (ex: droit de congé) numero 4 (il y a au plus 5 taxes par entrée documentaire pour un navire sur tout le corpus
+navigo_pointcalls,q01_4,profiles/navigo_pointcalls_q01_4.csv,chiffre payé de la  première unité de monnaie (exemple: livre tournois) pour la taxe numero 4
+navigo_pointcalls,q02_4,profiles/navigo_pointcalls_q02_4.csv,chiffre payé de la  deuxième unité de monnaie (exemple: sous tournois) pour la taxe numero 4
+navigo_pointcalls,q03_4,profiles/navigo_pointcalls_q03_4.csv,chiffre payé de la  3e unité de monnaie (exemple: deniers tournois) pour la taxe numero 4
+navigo_pointcalls,tax_concept5,profiles/navigo_pointcalls_tax_concept5.csv,
+navigo_pointcalls,q01_5,profiles/navigo_pointcalls_q01_5.csv,
+navigo_pointcalls,q02_5,profiles/navigo_pointcalls_q02_5.csv,
+navigo_pointcalls,q03_5,profiles/navigo_pointcalls_q03_5.csv,
 navigo_pointcalls,ship_uncertainity,profiles/navigo_pointcalls_ship_uncertainity.csv,"  0 si aucun doute concernant l'identifiant du navire ship_id, 
 -1 si doutes (non concordance du ship_name et du captain_name et du homeport_uhgs_id à la fois)
  -3 si pointcall_uncertainity 
@@ -130,7 +154,8 @@ navigo_pointcalls,tonnage_uncertainity,profiles/navigo_pointcalls_tonnage_uncert
 -1 si divergence forte entre les tonnages du même navire, même en prenant en compte la surévaluation de Marennes et Nantes, et en ignorant les petits tonneaux
 -2 si déduit par l'identification d'un navire et recopie du tonnage le plus fréquent du navire identifié
 -3 si  contredit par l'analyse
--4 si manquant"
+-4 si manquant
+"
 navigo_pointcalls,flag_uncertainity,profiles/navigo_pointcalls_flag_uncertainity.csv,"missing : -4, contredit :-3, déduit [] : -2, () : -1, sans doute : 0 - concernant le pavillon (ship_flag_id)"
 navigo_pointcalls,homeport_uncertainity,profiles/navigo_pointcalls_homeport_uncertainity.csv,"missing : -4, contredit :-3, déduit [] : -2, () : -1, sans doute : 0 -concernant le port d'attache (homeport_uhgs_id)"
 navigo_pointcalls,pointcall_uncertainity,profiles/navigo_pointcalls_pointcall_uncertainity.csv,"0 si status like PC%,  
@@ -138,15 +163,19 @@ navigo_pointcalls,pointcall_uncertainity,profiles/navigo_pointcalls_pointcall_un
 -2 si status like  PU% ,  
 -3 si contradiction lors de l'étude d'un trajet d'un navire entre le point précédent (Z) et le point suivant (net_route_marker = A et point Observé et status like PC%) "
 navigo_pointcalls,captain_uncertainity,profiles/navigo_pointcalls_captain_uncertainity.csv,"missing : -4, contredit :-3, déduit [] : -2, () : -1, sans doute : 0 - concernant l'identifiant du capitaine captain_id"
-navigo_pointcalls,cargo_uncertainity,profiles/navigo_pointcalls_cargo_uncertainity.csv,"manquant : -4, contredits (le navire n'y est pas allé) : -3, déduits [] : -2, doute : -1, certains 0"
-navigo_pointcalls,taxe_uncertainity,profiles/navigo_pointcalls_taxe_uncertainity.csv,"manquant : -4, contredits (le navire n'y est pas allé) : -3, déduits [] : -2, doute : -1, certains 0"
+navigo_pointcalls,shipclass_uncertainity,profiles/navigo_pointcalls_shipclass_uncertainity.csv,"missing : -4, contredit :-3, déduit [] : -2, () : -1, sans doute : 0 - concernant le type (la classe) de navire (class)"
+navigo_pointcalls,birthplace_uncertainity,profiles/navigo_pointcalls_birthplace_uncertainity.csv,"missing : -4, contredit :-3, déduit [] : -2, () : -1, sans doute : 0 - concernant le lieu de naissance/de vie du capitaine, indiqué comme le nom d'un port (birthplace)"
+navigo_pointcalls,citizenship_uncertainity,profiles/navigo_pointcalls_citizenship_uncertainity.csv,"missing : -4, contredit :-3, déduit [] : -2, () : -1, sans doute : 0 - concernant la nationalité du capitaine (citizenship)"
+navigo_pointcalls,birthplace_uhgs_id_uncertainity,profiles/navigo_pointcalls_birthplace_uhgs_id_uncertainity.csv,"missing : -4, contredit :-3, déduit [] : -2, () : -1, sans doute : 0 - concernant le lieu de naissance/de vie du capitaine, codé par rapport à un port (birthplace_uhgs_id)"
+navigo_pointcalls,cargo_uncertainity,profiles/navigo_pointcalls_cargo_uncertainity.csv,"missing commodity_purpose : -4,  () : -1, sans 0"
+navigo_pointcalls,taxe_uncertainity,profiles/navigo_pointcalls_taxe_uncertainity.csv,"missing tax_concept : -4, impossible -3,  déduit [] : -2, () : -1, sans 0"
 navigo_pointcalls,pointcall_in_date2,profiles/navigo_pointcalls_pointcall_in_date2.csv,
 navigo_pointcalls,pointcall_out_date2,profiles/navigo_pointcalls_pointcall_out_date2.csv,
 navigo_pointcalls,date_fixed,profiles/navigo_pointcalls_date_fixed.csv,"Date exacte de visite du port si connue (déduite de outdate et indate : coalesce(p.outdate_fixed, p.indate_fixed)"
 navigo_pointcalls,pointcall_rankfull,profiles/navigo_pointcalls_pointcall_rankfull.csv,"Rang de visite d'un port du navire, toutes sources confondues; 1 est le premier."
 navigo_pointcalls,ship_flag_standardized_fr,profiles/navigo_pointcalls_ship_flag_standardized_fr.csv,"Translation in French of the flag of the ship, based on the ship_flag_id"
 navigo_pointcalls,ship_flag_standardized_en,profiles/navigo_pointcalls_ship_flag_standardized_en.csv,"Translation in English of the flag of the ship, based on the ship_flag_id"
-navigo_pointcalls,tonnage_class,profiles/navigo_pointcalls_tonnage_class.csv,"one of [1-20]; [21-50]; [51-100]; [101-200]; [201-500]; [501 et plus] . For instance, for a tonnage of 24, this gives '[21-50]'"
+navigo_pointcalls,tonnage_class,profiles/navigo_pointcalls_tonnage_class.csv,"one of [1-20] [21-50] [51-100] [101-200] [201-500] [501 et plus] . For instance, for a tonnage of 24, this gives '[21-50]'. Si tonnage_unit == quintaux, alors tonnage = tonnage /  24.0"
 navigo_pointcalls,commodity_purpose2,profiles/navigo_pointcalls_commodity_purpose2.csv,Chose (item) transportée ou l’objet du voyage (si pêche par exemple). Telle que saisie. 
 navigo_pointcalls,commodity_id2,profiles/navigo_pointcalls_commodity_id2.csv,Identifiant du produit dans la base (exemple : sucre est codé 00000147)
 navigo_pointcalls,quantity2,profiles/navigo_pointcalls_quantity2.csv,Quantité de marchandise telle que exprimée par la source  : 3 balles de coton à 3
@@ -183,14 +212,14 @@ navigo_pointcalls,data_block_leader_marker,profiles/navigo_pointcalls_data_block
 = ""I"" premier point mentionné dans l’itinéraire passé. 
 = si le champ est vide, c'est que c'est des points autres (intermédiaires)
 "
+navigo_pointcalls,taxe_amount01,profiles/navigo_pointcalls_taxe_amount01.csv,"Calcul du montant total payé exprimé en deniers tournois pour la taxe numero 1, suivant cette formule : q01 * 120 + q02 * 12 + q03"
+navigo_pointcalls,taxe_amount02,profiles/navigo_pointcalls_taxe_amount02.csv,"Calcul du montant total payé exprimé en deniers tournois pour la taxe numero 2, suivant cette formule : q01 * 120 + q02 * 12 + q03"
+navigo_pointcalls,taxe_amount03,profiles/navigo_pointcalls_taxe_amount03.csv,"Calcul du montant total payé exprimé en deniers tournois pour la taxe numero 3, suivant cette formule : q01 * 120 + q02 * 12 + q03"
+navigo_pointcalls,taxe_amount04,profiles/navigo_pointcalls_taxe_amount04.csv,"Calcul du montant total payé exprimé en deniers tournois pour la taxe numero 4, suivant cette formule : q01 * 120 + q02 * 12 + q03"
+navigo_pointcalls,taxe_amount05,profiles/navigo_pointcalls_taxe_amount05.csv,
 navigo_pointcalls,pointcall_outdate_uncertainity,profiles/navigo_pointcalls_pointcall_outdate_uncertainity.csv,"0 si suite = 'Marseille', 
 -1 si suite = 'G5', 
  -3 si la suite 'Marseille' contredit la date de sortie d'un navire vu dans le 'G5'"
-navigo_pointcalls,shipclass_uncertainity,profiles/navigo_pointcalls_shipclass_uncertainity.csv,
-navigo_pointcalls,birthplace_uhgs_id_uncertainity,profiles/navigo_pointcalls_birthplace_uhgs_id_uncertainity.csv,
-navigo_pointcalls,birthplace_uncertainity,profiles/navigo_pointcalls_birthplace_uncertainity.csv,
-navigo_pointcalls,citizenship_uncertainity,profiles/navigo_pointcalls_citizenship_uncertainity.csv,
-navigo_pointcalls,birthplace_uhgs_id,profiles/navigo_pointcalls_birthplace_uhgs_id.csv,
 navigo_flows,travel_id,profiles/navigo_flows_travel_id.csv,Identifiant du trajet
 navigo_flows,distance_dep_dest,profiles/navigo_flows_distance_dep_dest.csv,"Distance en km entre départ et destination, arrondie à 3 decimales, à vol d'oiseau"
 navigo_flows,distance_homeport_dep,profiles/navigo_flows_distance_homeport_dep.csv,"Distance en km entre homeport et départ, arrondie à 3 decimales, à vol d'oiseau"
@@ -218,8 +247,11 @@ navigo_flows,departure_partner_balance_1789_uncertainty,profiles/navigo_flows_de
 navigo_flows,departure_partner_balance_supp_1789_uncertainty,profiles/navigo_flows_departure_partner_balance_supp_1789_uncertainty.csv,"Incertitude concernant la désignation du pays étranger suivant seconde nomenclature (supp) auquel se rattache ce port de départ, suivant les sources toflit'18 (Balance du commerce en 1789)"
 navigo_flows,departure_shiparea,profiles/navigo_flows_departure_shiparea.csv,Shipping area telle que calculée par J-P. Dedieu (mer ou ocean et région côtière du point)
 navigo_flows,departure_status,profiles/navigo_flows_departure_status.csv,oblique | siège d'amirauté | rien
-navigo_flows,departure_source_1787_available,profiles/navigo_flows_departure_source_1787_available.csv,"Vrai si on dispose des registres de ce port  de départ en 1787 (qui était oblique), faux sinon (le port  de départ est oblique, mais il n'a pas de registre pour 1787)"
-navigo_flows,departure_source_1789_available,profiles/navigo_flows_departure_source_1789_available.csv,"Vrai si on dispose des registres de ce port  de départ en 1789 (qui était oblique), faux sinon (le port  de départ est oblique, mais il n'a pas de registre pour 1789)"
+navigo_flows,departure_nb_conges_1787_inputdone,profiles/navigo_flows_departure_nb_conges_1787_inputdone.csv,Nombre de congés (nombre de source_doc_id différents) pour ce port en 1787 qui ont été saisis dans la base
+navigo_flows,departure_nb_conges_1787_cr,profiles/navigo_flows_departure_nb_conges_1787_cr.csv,"Nombre de congés  pour ce port en 1787 qui devraient exister de par les archives et pourraient être saisis (enquête des historiens, donc on n'est jamais certain d'avoir tout repéré) si les archives ont été conservées et sont lisibles."
+navigo_flows,departure_nb_conges_1789_inputdone,profiles/navigo_flows_departure_nb_conges_1789_inputdone.csv,Nombre de congés (nombre de source_doc_id différents) pour ce port en 1789 qui ont été saisis dans la base
+navigo_flows,departure_nb_conges_1789_cr,profiles/navigo_flows_departure_nb_conges_1789_cr.csv,"Nombre de congés  pour ce port en 1789 qui devraient exister de par les archives et pourraient être saisis (enquête des historiens, donc on n'est jamais certain d'avoir tout repéré) si les archives ont été conservées et sont lisibles. "
+navigo_flows,departure_status_uncertainity,profiles/navigo_flows_departure_status_uncertainity.csv,0 si certain : -1 si doute ; -2 si gros doute
 navigo_flows,departure_point,profiles/navigo_flows_departure_point.csv,WKT point en EPSG 3857
 navigo_flows,departure_out_date,profiles/navigo_flows_departure_out_date.csv,Date de sortie telle que écrite dans la source
 navigo_flows,departure_action,profiles/navigo_flows_departure_action.csv,In | In-Out | Out | Transit | Loading | Captured | …
@@ -258,12 +290,17 @@ navigo_flows,destination_partner_balance_1789_uncertainty,profiles/navigo_flows_
 navigo_flows,destination_partner_balance_supp_1789_uncertainty,profiles/navigo_flows_destination_partner_balance_supp_1789_uncertainty.csv,"Incertitude concernant la désignation du pays étranger suivant seconde nomenclature (supp) auquel se rattache ce port d'arrivée , suivant les sources toflit'18 (Balance du commerce en 1789)"
 navigo_flows,destination_shiparea,profiles/navigo_flows_destination_shiparea.csv,Shipping area telle que calculée par J-P. Dedieu (mer ou ocean et région côtière du point)
 navigo_flows,destination_status,profiles/navigo_flows_destination_status.csv,oblique | siège d'amirauté
-navigo_flows,destination_source_1787_available,profiles/navigo_flows_destination_source_1787_available.csv,"Vrai si on dispose des registres de ce port d'arrivée en 1787 (qui était oblique), faux sinon (le port est oblique, mais il n'a pas de registre pour 1787)"
-navigo_flows,destination_source_1789_available,profiles/navigo_flows_destination_source_1789_available.csv,"Vrai si on dispose des registres de ce port d'arrivée en 1789 (qui était oblique), faux sinon (le port est oblique, mais il n'a pas de registre pour 1789)"
+navigo_flows,destination_nb_conges_1787_inputdone,profiles/navigo_flows_destination_nb_conges_1787_inputdone.csv,Nombre de congés (nombre de source_doc_id différents) pour ce port en 1787 qui ont été saisis dans la base
+navigo_flows,destination_nb_conges_1787_cr,profiles/navigo_flows_destination_nb_conges_1787_cr.csv,"Nombre de congés  pour ce port en 1787 qui devraient exister de par les archives et pourraient être saisis (enquête des historiens, donc on n'est jamais certain d'avoir tout repéré) si les archives ont été conservées et sont lisibles."
+navigo_flows,destination_nb_conges_1789_inputdone,profiles/navigo_flows_destination_nb_conges_1789_inputdone.csv,Nombre de congés (nombre de source_doc_id différents) pour ce port en 1789 qui ont été saisis dans la base
+navigo_flows,destination_nb_conges_1789_cr,profiles/navigo_flows_destination_nb_conges_1789_cr.csv,"Nombre de congés  pour ce port en 1789 qui devraient exister de par les archives et pourraient être saisis (enquête des historiens, donc on n'est jamais certain d'avoir tout repéré) si les archives ont été conservées et sont lisibles. "
+navigo_flows,destination_status_uncertainity,profiles/navigo_flows_destination_status_uncertainity.csv,0 si certain : -1 si doute ; -2 si gros doute
 navigo_flows,destination_point,profiles/navigo_flows_destination_point.csv,WKT point en EPSG 3857
 navigo_flows,destination_in_date,profiles/navigo_flows_destination_in_date.csv,Date d'arrivée telle que écrite dans la source
 navigo_flows,destination_action,profiles/navigo_flows_destination_action.csv,In | In-Out | Out | Transit | Loading | Captured | … Si renseignée (Marseille)
-navigo_flows,indate_fixed,profiles/navigo_flows_indate_fixed.csv,Date transformée si renseignée de l'observation à la destination : yyyy-MM-DD
+navigo_flows,indate_fixed,profiles/navigo_flows_indate_fixed.csv,"C'est la date d'arrivée au plus tard par rapport à la date de départ suivant observé pour le même ship_id.
+coalesce(p.outdate_fixed, p.indate_fixed) avec p = le point d'arrivée. 
+Ce qui signifie que pour presque toute la suite G5, c'est une donnée ""au plus tard"" calculée, qui dépend de la bonne identification du navire. "
 navigo_flows,destination_navstatus,profiles/navigo_flows_destination_navstatus.csv,"Passé, ou futur par rapport au point d’observation. Plus intention non realise “J’aurais voulu aller à Malte… mais j’ai été capturé avant »
 P | C -        CO
 F | A -        ML
@@ -279,9 +316,8 @@ navigo_flows,ship_id,profiles/navigo_flows_ship_id.csv,Codage pour identifier le
 navigo_flows,tonnage,profiles/navigo_flows_tonnage.csv,"Tonnage du navire, noté en réel (virgule pour décimales).  
  1 tonneau = 24 quintaux, donc les valeurs de Marseille exprimés généralement en quintaux doivent être converties en tonneaux en divisant par 24
 Mail Silvia du 29 janvier 2020 : Oui mais En faisant attention que l'unité de mesure exprimée soit le quintal car on a également rapporté à Marseille les tonnages en tonneaux de navires identifiés dans d'autres ports."
-navigo_flows,tonnage_unit,profiles/navigo_flows_tonnage_unit.csv,"Unité du tonnage. 46 valeurs différentes.  A harmoniser
-1 tonneau = 24 quintaux, donc les valeurs de Marseille exprimés généralement en quintaux doivent être converties en tonneaux en divisant par 24"
-navigo_flows,tonnage_class,profiles/navigo_flows_tonnage_class.csv,"one of [1-20]; [21-50]; [51-100]; [101-200]; [201-500]; [501 et plus] . For instance, for a tonnage of 24, this gives '[21-50]'"
+navigo_flows,tonnage_unit,profiles/navigo_flows_tonnage_unit.csv,Unité du tonnage. 46 valeurs différentes.  A harmoniser
+navigo_flows,tonnage_class,profiles/navigo_flows_tonnage_class.csv,"one of [1-20] [21-50] [51-100] [101-200] [201-500] [501 et plus] . For instance, for a tonnage of 24, this gives '[21-50]'. Si tonnage_unit == quintaux, alors tonnage = tonnage /  24.0"
 navigo_flows,in_crew,profiles/navigo_flows_in_crew.csv,Nombre d'équipage embarqué sur un bateau entrant
 navigo_flows,flag,profiles/navigo_flows_flag.csv,"Pavillon du navire, tel que lu dans la source --> afficher etat d'appartenance dans la viz (celui du homeport)"
 navigo_flows,ship_flag_id,profiles/navigo_flows_ship_flag_id.csv,identifier of the flag
@@ -322,11 +358,12 @@ navigo_flows,captain_name,profiles/navigo_flows_captain_name.csv,"Nom du capitai
 navigo_flows,birthplace,profiles/navigo_flows_birthplace.csv,"Lieu d'origine du capitaine. Exemples : ""Quinto"", ""Dunkerquois"", ""NAntes"", ""Isle Rousse"""
 navigo_flows,status,profiles/navigo_flows_status.csv,Titre du capitaine à bord. Type énuméré à NORMALISER.
 navigo_flows,citizenship,profiles/navigo_flows_citizenship.csv,"Nationalité du capitaine inscrite par l'historien.   Exemples : ""([Tuscan])"", ""([Ragusan])"", ""([Napolitano])"", ""([Genoese])"""
+navigo_flows,birthplace_uhgs_id,profiles/navigo_flows_birthplace_uhgs_id.csv,"Codage du lieu d'origine du capitaine, par le code du port correspondant au birthplace."
 navigo_flows,commodity_purpose,profiles/navigo_flows_commodity_purpose.csv,Chose (item) transportée ou l’objet du voyage (si pêche par exemple). Telle que saisie. 
 navigo_flows,commodity_id,profiles/navigo_flows_commodity_id.csv,Identifiant du produit dans la base (exemple : sucre est codé 00000147)
 navigo_flows,quantity,profiles/navigo_flows_quantity.csv,Quantité de marchandise telle que exprimée par la source  : 3 balles de coton à 3
 navigo_flows,quantity_u,profiles/navigo_flows_quantity_u.csv,Unité de la quantité de marchandise telle que exprimée par la source  : 3 balles de coton à balles
-navigo_flows,commodity_standardized,profiles/navigo_flows_commodity_standardized.csv,Nom de la chose standardisée en anglais et au singulier. Oil (olive) Nouvelle traduction de Silvia (8 fev 2021)
+navigo_flows,commodity_standardized,profiles/navigo_flows_commodity_standardized.csv,Nom de la chose standardisée en anglais et au singulier. Oil (olive)
 navigo_flows,commodity_standardized_fr,profiles/navigo_flows_commodity_standardized_fr.csv,Nom de la chose standardisée en français et au singulier. Oil (olive)
 navigo_flows,commodity_permanent_coding,profiles/navigo_flows_commodity_permanent_coding.csv,"Méta catégorie (un agrégat). Pour les poissons par exemple
 Manque produit coloniaux.
@@ -363,15 +400,36 @@ Manque produit coloniaux.
 Value: looked up from the Dictionary of commodities
 "
 navigo_flows,all_cargos,profiles/navigo_flows_all_cargos.csv,"Tableau des cargaisons : [{commodity_purpose:, commodity_id:, quantity:, quantity_u, commodity_standardized:, commodity_permanent_coding:}, …{}]"
-navigo_flows,tax_concept,profiles/navigo_flows_tax_concept.csv,nom de la taxe (ex: droit de congé)
-navigo_flows,payment_date,profiles/navigo_flows_payment_date.csv,Date de paiement de la taxe
-navigo_flows,q01,profiles/navigo_flows_q01.csv,chiffre payé de la  première unité de monnaie (exeple: livre tournois
+navigo_flows,tax_concept1,profiles/navigo_flows_tax_concept1.csv,nom de la taxe numero 1 (ex: droit de congé)
+navigo_flows,payment_date,profiles/navigo_flows_payment_date.csv,Date de paiement de la taxe 1
+navigo_flows,q01_1,profiles/navigo_flows_q01_1.csv,chiffre payé de la  première unité de monnaie (exemple: livre tournois) pour la taxe numero 1
 navigo_flows,q01_u,profiles/navigo_flows_q01_u.csv,nom de l'unité (livre tournois)
-navigo_flows,q02,profiles/navigo_flows_q02.csv,chiffre payé de la  deuxième unité de monnaie (exeple: sous tournois)
+navigo_flows,q02_1,profiles/navigo_flows_q02_1.csv,chiffre payé de la  deuxième unité de monnaie (exemple: sous tournois) pour la taxe numero 2
 navigo_flows,q02_u,profiles/navigo_flows_q02_u.csv,nom de l'unité (sous tournois)
-navigo_flows,q03,profiles/navigo_flows_q03.csv,chiffre payé de la  3e unité de monnaie (exeple: deniers tournois)
+navigo_flows,q03_1,profiles/navigo_flows_q03_1.csv,chiffre payé de la  3e unité de monnaie (exemple: deniers tournois) pour la texe numero 3
 navigo_flows,q03_u,profiles/navigo_flows_q03_u.csv,nom de l'unité (deniers tournois)
+navigo_flows,taxe_amount01,profiles/navigo_flows_taxe_amount01.csv,"Calcul du montant total payé exprimé en deniers tournois pour la taxe numero 1, suivant cette formule : q01 * 120 + q02 * 12 + q03"
 navigo_flows,all_taxes,profiles/navigo_flows_all_taxes.csv,"Tableau des taxes : [{tax_concept:,payment_date:, q01:, q01_u:, q02:, q02_u:, q03:, q03_u:}, …{}]"
+navigo_flows,tax_concept2,profiles/navigo_flows_tax_concept2.csv,nom de la taxe (ex: droit de congé) numero 2 (il y a au plus 5 taxes par entrée documentaire pour un navire sur tout le corpus
+navigo_flows,q01_2,profiles/navigo_flows_q01_2.csv,chiffre payé de la  première unité de monnaie (exemple: livre tournois) pour la taxe numero 2
+navigo_flows,q02_2,profiles/navigo_flows_q02_2.csv,chiffre payé de la  deuxième unité de monnaie (exemple: sous tournois) pour la taxe numero 2
+navigo_flows,q03_2,profiles/navigo_flows_q03_2.csv,chiffre payé de la  3e unité de monnaie (exemple: deniers tournois) pour la taxe numero 2
+navigo_flows,taxe_amount02,profiles/navigo_flows_taxe_amount02.csv,"Calcul du montant total payé exprimé en deniers tournois pour la taxe numero 2, suivant cette formule : q01 * 120 + q02 * 12 + q03"
+navigo_flows,tax_concept3,profiles/navigo_flows_tax_concept3.csv,nom de la taxe (ex: droit de congé) numero 3 (il y a au plus 5 taxes par entrée documentaire pour un navire sur tout le corpus
+navigo_flows,q01_3,profiles/navigo_flows_q01_3.csv,chiffre payé de la  première unité de monnaie (exemple: livre tournois) pour la taxe numero 3
+navigo_flows,q02_3,profiles/navigo_flows_q02_3.csv,chiffre payé de la  deuxième unité de monnaie (exemple: sous tournois) pour la taxe numero 3
+navigo_flows,q03_3,profiles/navigo_flows_q03_3.csv,chiffre payé de la  3e unité de monnaie (exemple: deniers tournois) pour la taxe numero 3
+navigo_flows,taxe_amount03,profiles/navigo_flows_taxe_amount03.csv,"Calcul du montant total payé exprimé en deniers tournois pour la taxe numero 3, suivant cette formule : q01 * 120 + q02 * 12 + q03"
+navigo_flows,tax_concept4,profiles/navigo_flows_tax_concept4.csv,nom de la taxe (ex: droit de congé) numero 4 (il y a au plus 5 taxes par entrée documentaire pour un navire sur tout le corpus
+navigo_flows,q01_4,profiles/navigo_flows_q01_4.csv,chiffre payé de la  première unité de monnaie (exemple: livre tournois) pour la taxe numero 4
+navigo_flows,q02_4,profiles/navigo_flows_q02_4.csv,chiffre payé de la  deuxième unité de monnaie (exemple: sous tournois) pour la taxe numero 4
+navigo_flows,q03_4,profiles/navigo_flows_q03_4.csv,chiffre payé de la  3e unité de monnaie (exemple: deniers tournois) pour la taxe numero 4
+navigo_flows,taxe_amount04,profiles/navigo_flows_taxe_amount04.csv,"Calcul du montant total payé exprimé en deniers tournois pour la taxe numero 4, suivant cette formule : q01 * 120 + q02 * 12 + q03"
+navigo_flows,tax_concept5,profiles/navigo_flows_tax_concept5.csv,
+navigo_flows,q01_5,profiles/navigo_flows_q01_5.csv,
+navigo_flows,q02_5,profiles/navigo_flows_q02_5.csv,
+navigo_flows,q03_5,profiles/navigo_flows_q03_5.csv,
+navigo_flows,taxe_amount05,profiles/navigo_flows_taxe_amount05.csv,
 navigo_flows,ship_uncertainity,profiles/navigo_flows_ship_uncertainity.csv,"  0 si aucun doute concernant l'identifiant du navire ship_id, 
 -1 si doutes (non concordance du ship_name et du captain_name et du homeport_uhgs_id à la fois)
  -3 si pointcall_uncertainity 
@@ -380,7 +438,8 @@ navigo_flows,tonnage_uncertainity,profiles/navigo_flows_tonnage_uncertainity.csv
 -1 si divergence forte entre les tonnages du même navire, même en prenant en compte la surévaluation de Marennes et Nantes, et en ignorant les petits tonneaux
 -2 si déduit par l'identification d'un navire et recopie du tonnage le plus fréquent du navire identifié
 -3 si  contredit par l'analyse
--4 si manquant"
+-4 si manquant
+"
 navigo_flows,flag_uncertainity,profiles/navigo_flows_flag_uncertainity.csv,"missing : -4, contredit :-3, déduit [] : -2, () : -1, sans doute : 0 - concernant le pavillon (ship_flag_id)"
 navigo_flows,homeport_uncertainity,profiles/navigo_flows_homeport_uncertainity.csv,"missing : -4, contredit :-3, déduit [] : -2, () : -1, sans doute : 0 -concernant le port d'attache (homeport_uhgs_id)"
 navigo_flows,departure_uncertainity,profiles/navigo_flows_departure_uncertainity.csv,"0 si status like PC%,  
@@ -393,11 +452,15 @@ navigo_flows,destination_uncertainity,profiles/navigo_flows_destination_uncertai
 -3 si contradiction lors de l'étude d'un trajet d'un navire entre le point précédent (Z) et le point suivant (net_route_marker = A et point Observé et status like PC%) "
 navigo_flows,captain_uncertainity,profiles/navigo_flows_captain_uncertainity.csv,"missing : -4, contredit :-3, déduit [] : -2, () : -1, sans doute : 0 - concernant l'identifiant du capitaine captain_id"
 navigo_flows,travel_uncertainity,profiles/navigo_flows_travel_uncertainity.csv,"0 : certifie (les 2 pointcalls sont certains (0), -1 : déclaré (un des 2 pointcalls a pour valeur -1), - 3 : pour non réalisé (un des deux pointcalls contredit (-3) par analyse avec d'autres documents)"
-navigo_flows,cargo_uncertainity,profiles/navigo_flows_cargo_uncertainity.csv,"manquant : -4, contredits (le navire n'y est pas allé) : -3, déduits [] : -2, doute : -1, certains 0"
-navigo_flows,taxe_uncertainity,profiles/navigo_flows_taxe_uncertainity.csv,"manquant : -4, contredits (le navire n'y est pas allé) : -3, déduits [] : -2, doute : -1, certains 0"
+navigo_flows,cargo_uncertainity,profiles/navigo_flows_cargo_uncertainity.csv,"missing commodity_purpose : -4,  () : -1, sans 0"
+navigo_flows,taxe_uncertainity,profiles/navigo_flows_taxe_uncertainity.csv,"missing tax_concept : -4, impossible -3,  déduit [] : -2, () : -1, sans 0"
 navigo_flows,pointcall_outdate_uncertainity,profiles/navigo_flows_pointcall_outdate_uncertainity.csv,"0 si suite = 'Marseille', 
 -1 si suite = 'G5', 
  -3 si la suite 'Marseille' contredit la date de sortie d'un navire vu dans le 'G5'"
+navigo_flows,shipclass_uncertainity,profiles/navigo_flows_shipclass_uncertainity.csv,"missing : -4, contredit :-3, déduit [] : -2, () : -1, sans doute : 0 - concernant le type (la classe) de navire (class)"
+navigo_flows,birthplace_uhgs_id_uncertainity,profiles/navigo_flows_birthplace_uhgs_id_uncertainity.csv,"missing : -4, contredit :-3, déduit [] : -2, () : -1, sans doute : 0 - concernant le lieu de naissance/de vie du capitaine, codé par rapport à un port (birthplace_uhgs_id)"
+navigo_flows,birthplace_uncertainity,profiles/navigo_flows_birthplace_uncertainity.csv,"missing : -4, contredit :-3, déduit [] : -2, () : -1, sans doute : 0 - concernant le lieu de naissance/de vie du capitaine, indiqué comme le nom d'un port (birthplace)"
+navigo_flows,citizenship_uncertainity,profiles/navigo_flows_citizenship_uncertainity.csv,"missing : -4, contredit :-3, déduit [] : -2, () : -1, sans doute : 0 - concernant la nationalité du capitaine (citizenship)"
 navigo_flows,departure_pkid,profiles/navigo_flows_departure_pkid.csv,Identifier of the record describing the departure (from) - join to navigoviz.pointcall.pkid
 navigo_flows,destination_pkid,profiles/navigo_flows_destination_pkid.csv,Identifier of the record describing the destination (to) - join to navigoviz.pointcall.pkid
 navigo_flows,travel_rank,profiles/navigo_flows_travel_rank.csv,Ordre du troncon sur la route du navire (rank du pointcall de départ)
